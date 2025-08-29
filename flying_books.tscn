@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=3 uid="uid://be7hc4c32osm8"]
+
+[ext_resource type="Script" uid="uid://dwgcdpgsoprgv" path="res://flying_books.gd" id="1_1fb6m"]
+[ext_resource type="Texture2D" uid="uid://bq4seonhwnnm" path="res://Assets/book flapping.png" id="1_ff1x0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fb6m"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(0, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuf1b"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(10, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewst3"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(20, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmkmr"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(30, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7oho"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(40, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_depyd"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(50, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvj56"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(60, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqw1k"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(70, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcl17"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(80, 30, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqf86"]
+atlas = ExtResource("1_ff1x0")
+region = Rect2(90, 30, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff1x0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fb6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuf1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewst3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmkmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7oho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_depyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvj56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqw1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcl17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqf86")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fb6m"]
+size = Vector2(6, 4)
+
+[node name="flying_books" type="Area2D"]
+script = ExtResource("1_1fb6m")
+
+[node name="Books_animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ff1x0")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Books_collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_1fb6m")

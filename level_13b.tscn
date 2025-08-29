@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://h573frp1ldwy"]
+
+[ext_resource type="Texture2D" uid="uid://boewrxcan8nx5" path="res://Assets/16px/allTiles.png" id="1_t5tiq"]
+
+[sub_resource type="GDScript" id="GDScript_t5tiq"]
+script/source = "extends Node2D
+
+
+func _on_retry_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://level_13.tscn\")
+
+
+
+func _on_move_on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://level_14.tscn\")
+"
+
+[node name="level_13b" type="Node2D"]
+script = SubResource("GDScript_t5tiq")
+
+[node name="Retry button" type="Button" parent="."]
+offset_left = -428.0
+offset_top = -66.0
+offset_right = -371.0
+offset_bottom = -35.0
+scale = Vector2(3.88587, 3.7)
+text = "Retry?"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AllTiles" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-164, -873)
+scale = Vector2(-146.619, -18.3283)
+texture = ExtResource("1_t5tiq")
+
+[node name="Move On Button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = -64.0
+offset_right = 175.0
+offset_bottom = -33.0
+scale = Vector2(3.25912, 3.47778)
+text = "Lets Just move on"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -299.0
+offset_top = -269.0
+offset_right = -123.0
+offset_bottom = -246.0
+scale = Vector2(3.52229, 4.31225)
+text = "ha ah not that easy eh"
+
+[connection signal="pressed" from="Retry button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Move On Button" to="." method="_on_move_on_button_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://c073ejja8rqhm"]
+
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="1_1cgcc"]
+[ext_resource type="Script" uid="uid://dlor6empe6yt7" path="res://level_30.gd" id="1_a773l"]
+[ext_resource type="Texture2D" uid="uid://c1cu2y44jq23c" path="res://Assets/skiing stuff/schedual.png" id="3_4qocy"]
+[ext_resource type="Texture2D" uid="uid://c2kxbsi0sg8m5" path="res://Assets/skiing stuff/CHECK.png" id="4_igbct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o38x"]
+size = Vector2(56, 48)
+
+[node name="level_30" type="Node2D"]
+script = ExtResource("1_a773l")
+
+[node name="Player" parent="." instance=ExtResource("1_1cgcc")]
+position = Vector2(1080, 80)
+scale = Vector2(3, 3)
+
+[node name="Schedual" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(575, 324.25)
+scale = Vector2(1.62994, 1.39849)
+texture = ExtResource("3_4qocy")
+
+[node name="Check" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 224)
+scale = Vector2(0.110169, 0.114458)
+texture = ExtResource("4_igbct")
+
+[node name="Check2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 288)
+scale = Vector2(0.110169, 0.114458)
+texture = ExtResource("4_igbct")
+
+[node name="Check3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(192, 344)
+scale = Vector2(0.110169, 0.114458)
+texture = ExtResource("4_igbct")
+
+[node name="Check4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 392)
+scale = Vector2(0.110169, 0.114458)
+texture = ExtResource("4_igbct")
+
+[node name="box1" type="Area2D" parent="."]
+position = Vector2(184, 240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_8o38x")
+
+[node name="box2" type="Area2D" parent="."]
+position = Vector2(184, 304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box2"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_8o38x")
+
+[node name="box3" type="Area2D" parent="."]
+position = Vector2(192, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box3"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_8o38x")
+
+[node name="box4" type="Area2D" parent="."]
+position = Vector2(184, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box4"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_8o38x")
+
+[connection signal="body_entered" from="box1" to="." method="_on_box_1_body_entered"]
+[connection signal="body_entered" from="box2" to="." method="_on_box_2_body_entered"]
+[connection signal="body_entered" from="box3" to="." method="_on_box_3_body_entered"]
+[connection signal="body_entered" from="box4" to="." method="_on_box_4_body_entered"]

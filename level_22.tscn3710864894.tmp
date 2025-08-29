@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://ciiy1xr4bbrgd"]
+
+[ext_resource type="Texture2D" uid="uid://bu36j5fqvue60" path="res://Assets/skiing stuff/ski Hill.png" id="1_xi250"]
+[ext_resource type="Texture2D" uid="uid://c6ej1rfkx0sdj" path="res://Assets/skiing stuff/Jump1.png" id="2_yeci1"]
+[ext_resource type="Texture2D" uid="uid://dyt5et716mmms" path="res://Assets/skiing stuff/jump3.png" id="3_lmde5"]
+[ext_resource type="Texture2D" uid="uid://er8qg0urqw54" path="res://Assets/skiing stuff/jump2.png" id="4_laqjg"]
+[ext_resource type="Script" uid="uid://ds0ltya8f6c48" path="res://skier.gd" id="5_lmde5"]
+[ext_resource type="Texture2D" uid="uid://lgx4foj0rqtk" path="res://Assets/ava skiing.png" id="5_yeci1"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eer6t"]
+a = Vector2(204.147, 7.62939e-06)
+b = Vector2(-224, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ocb37"]
+a = Vector2(34.0244, 0)
+b = Vector2(215.488, -137.848)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uj8dn"]
+a = Vector2(34.0245, 0)
+b = Vector2(204.147, -42.4148)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xi250"]
+a = Vector2(-544, -328)
+b = Vector2(-224, 56)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lmde5"]
+a = Vector2(112, -8)
+b = Vector2(-96, -8)
+
+[node name="level_22" type="Node2D"]
+
+[node name="SkiHillBkgrnd" type="Sprite2D" parent="."]
+rotation = -0.000459678
+texture = ExtResource("1_xi250")
+
+[node name="Jump1" type="StaticBody2D" parent="."]
+position = Vector2(-71.9999, 56)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump1s2d" type="Sprite2D" parent="Jump1"]
+position = Vector2(-16, 72)
+texture = ExtResource("2_yeci1")
+
+[node name="Jump1cs2d" type="CollisionShape2D" parent="Jump1"]
+shape = SubResource("SegmentShape2D_eer6t")
+
+[node name="Jump3" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-408, 56)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump3s2d" type="Sprite2D" parent="Jump3"]
+position = Vector2(476.343, 10.6037)
+texture = ExtResource("3_lmde5")
+
+[node name="Jump3cs2d2" type="CollisionShape2D" parent="Jump3"]
+visible = false
+position = Vector2(476.343, 0)
+scale = Vector2(1, 1)
+shape = SubResource("SegmentShape2D_ocb37")
+
+[node name="Jump3cs2d" type="CollisionShape2D" parent="Jump3"]
+visible = false
+position = Vector2(476.343, 0)
+shape = SubResource("SegmentShape2D_eer6t")
+
+[node name="Jump2" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-71.9999, 64)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump2s2d" type="Sprite2D" parent="Jump2"]
+position = Vector2(6.10352e-05, 53.0185)
+texture = ExtResource("4_laqjg")
+
+[node name="Jump2cs2d2" type="CollisionShape2D" parent="Jump2"]
+visible = false
+position = Vector2(11.3416, -10.6037)
+scale = Vector2(1, 1)
+shape = SubResource("SegmentShape2D_uj8dn")
+
+[node name="Jump2cs2d" type="CollisionShape2D" parent="Jump2"]
+visible = false
+position = Vector2(11.3416, -10.6037)
+shape = SubResource("SegmentShape2D_eer6t")
+
+[node name="worldBoundry" type="StaticBody2D" parent="."]
+
+[node name="worldBoundrycs" type="CollisionShape2D" parent="worldBoundry"]
+shape = SubResource("SegmentShape2D_xi250")
+
+[node name="skier" type="CharacterBody2D" parent="."]
+position = Vector2(-416, -272)
+rotation = 0.805649
+scale = Vector2(0.540234, 0.469659)
+script = ExtResource("5_lmde5")
+
+[node name="Sprite2D" type="Sprite2D" parent="skier"]
+texture = ExtResource("5_yeci1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="skier"]
+position = Vector2(-8, 112)
+shape = SubResource("SegmentShape2D_lmde5")
+
+[node name="Camera2D" type="Camera2D" parent="."]

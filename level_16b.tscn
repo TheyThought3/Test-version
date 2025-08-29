@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://jsqjdoytpyng"]
+
+[ext_resource type="Texture2D" uid="uid://bipjmg70opnhh" path="res://Assets/easter/IMG_4785.JPG" id="1_fbrco"]
+[ext_resource type="Script" uid="uid://m5fcivy336si" path="res://level_16b.gd" id="1_xrnxp"]
+[ext_resource type="Texture2D" uid="uid://tvrtuy4t15x6" path="res://Assets/easter/IMG_4802.JPG" id="2_xrnxp"]
+[ext_resource type="Texture2D" uid="uid://dhwfh6pce0pwe" path="res://Assets/easter/IMG_4808.jpg" id="3_7tgf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tgf5"]
+size = Vector2(386, 650)
+
+[node name="level_16b" type="Node2D"]
+script = ExtResource("1_xrnxp")
+
+[node name="Img4785" type="Sprite2D" parent="."]
+position = Vector2(-200.25, -302.813)
+scale = Vector2(0.630328, 0.602419)
+texture = ExtResource("1_fbrco")
+
+[node name="Img4802" type="Sprite2D" parent="."]
+position = Vector2(194, -307.75)
+scale = Vector2(1.48438, 1.49424)
+texture = ExtResource("2_xrnxp")
+
+[node name="Img4808" type="Sprite2D" parent="."]
+position = Vector2(602.25, -301.625)
+scale = Vector2(0.525184, 0.614977)
+texture = ExtResource("3_7tgf5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(184, -304)
+
+[node name="htext" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -248.0
+offset_right = 301.0
+offset_bottom = -225.0
+scale = Vector2(1.51298, 2.91614)
+text = "Now which was the best halloween costume?"
+
+[node name="legs" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="legs"]
+position = Vector2(-193, -301)
+shape = SubResource("RectangleShape2D_7tgf5")
+
+[node name="sheldon" type="Area2D" parent="."]
+position = Vector2(384, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sheldon"]
+position = Vector2(-193, -301)
+shape = SubResource("RectangleShape2D_7tgf5")
+
+[node name="owen" type="Area2D" parent="."]
+position = Vector2(784, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="owen"]
+position = Vector2(-193, -301)
+shape = SubResource("RectangleShape2D_7tgf5")
+
+[connection signal="input_event" from="legs" to="." method="_on_legs_input_event"]
+[connection signal="input_event" from="sheldon" to="." method="_on_sheldon_input_event"]
+[connection signal="input_event" from="owen" to="." method="_on_owen_input_event"]

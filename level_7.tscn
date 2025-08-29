@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://w68putubecxp"]
+
+[ext_resource type="Texture2D" uid="uid://cs3t04ecd6a6q" path="res://Assets/Brain.png" id="1_2pghd"]
+[ext_resource type="Script" uid="uid://c2n6o0ofjxcpp" path="res://level_7.gd" id="1_mvmg7"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="2_mvmg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nak3m"]
+size = Vector2(22.552, 66.8699)
+
+[node name="level_7" type="Node2D"]
+script = ExtResource("1_mvmg7")
+
+[node name="Brain" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.368517, 0.416715)
+texture = ExtResource("1_2pghd")
+
+[node name="Player" parent="." instance=ExtResource("2_mvmg7")]
+position = Vector2(-154, -67)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4.5, 4.5)
+limit_left = -213
+limit_top = -135
+limit_right = 211
+limit_bottom = 135
+position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(126, 100)
+rotation = -0.591477
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.27598, 19.0128)
+shape = SubResource("RectangleShape2D_nak3m")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.00351917, 0.00351917, 0.00351917, 1)
+offset_left = 94.0
+offset_top = 17.0
+offset_right = 198.0
+offset_bottom = 40.0
+text = "Exit the brain"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

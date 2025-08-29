@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://pexu2qpeyhvp"]
+
+[ext_resource type="Texture2D" uid="uid://cwqnn6witndoe" path="res://Assets/table.png" id="1_hy6b0"]
+[ext_resource type="Script" uid="uid://bajl0sm70fcs" path="res://level_26.gd" id="1_o05fe"]
+[ext_resource type="PackedScene" uid="uid://dwcbr6ssqsbyc" path="res://fam_dinner_things.tscn" id="2_rcwqt"]
+[ext_resource type="Texture2D" uid="uid://blvehbcqwomcf" path="res://Assets/famDinner/carrotEaten.png" id="3_qlv60"]
+[ext_resource type="Texture2D" uid="uid://brceqmf7b82mg" path="res://Assets/famDinner/carrot.png" id="4_qetk6"]
+[ext_resource type="Texture2D" uid="uid://dt252tx700im4" path="res://Assets/famDinner/potatoEaten.png" id="5_nyjhf"]
+[ext_resource type="Texture2D" uid="uid://curg681jeaucn" path="res://Assets/famDinner/potato.png" id="6_o05fe"]
+[ext_resource type="Texture2D" uid="uid://mftottcapunb" path="res://Assets/famDinner/saladEaten.png" id="7_j1ja7"]
+[ext_resource type="Texture2D" uid="uid://baekmfs6irok4" path="res://Assets/famDinner/salad.png" id="8_fr3ar"]
+[ext_resource type="Texture2D" uid="uid://c1a881fyyq6gb" path="res://Assets/famDinner/turkeyEaten.png" id="9_xte7c"]
+[ext_resource type="Texture2D" uid="uid://dey7j8g2hj310" path="res://Assets/famDinner/turkey.png" id="10_sel4f"]
+[ext_resource type="Texture2D" uid="uid://r5go3yq632q5" path="res://Assets/famDinner/IMG_7015.JPG" id="12_j1ja7"]
+
+[node name="level_26" type="Node2D"]
+script = ExtResource("1_o05fe")
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(-28, -16)
+scale = Vector2(1.88745, 1.99308)
+texture = ExtResource("1_hy6b0")
+
+[node name="talking" type="Label" parent="."]
+offset_left = -429.0
+offset_top = -220.0
+offset_right = -389.0
+offset_bottom = -197.0
+scale = Vector2(1.60636, 1.54064)
+
+[node name="FamDinnerThings" parent="." instance=ExtResource("2_rcwqt")]
+position = Vector2(-115, 9)
+scale = Vector2(0.140491, 0.156481)
+reveal_texture = ExtResource("3_qlv60")
+starting_texture = ExtResource("4_qetk6")
+
+[node name="FamDinnerThings2" parent="." instance=ExtResource("2_rcwqt")]
+position = Vector2(14, -9.53674e-07)
+scale = Vector2(0.140491, 0.156481)
+reveal_texture = ExtResource("5_nyjhf")
+starting_texture = ExtResource("6_o05fe")
+
+[node name="FamDinnerThings3" parent="." instance=ExtResource("2_rcwqt")]
+position = Vector2(-69, -81)
+scale = Vector2(0.140491, 0.156481)
+reveal_texture = ExtResource("7_j1ja7")
+starting_texture = ExtResource("8_fr3ar")
+
+[node name="FamDinnerThings4" parent="." instance=ExtResource("2_rcwqt")]
+position = Vector2(43, -82)
+scale = Vector2(0.205245, 0.201174)
+reveal_texture = ExtResource("9_xte7c")
+starting_texture = ExtResource("10_sel4f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="grace timer" type="Label" parent="."]
+offset_left = -355.0
+offset_top = -225.0
+offset_right = -315.0
+offset_bottom = -202.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.0
+
+[node name="Img7015" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(301, -190)
+scale = Vector2(0.221821, 0.19131)
+texture = ExtResource("12_j1ja7")
+
+[connection signal="early" from="FamDinnerThings" to="." method="_on_fam_dinner_things_early"]
+[connection signal="eaten" from="FamDinnerThings" to="." method="_on_fam_dinner_things_eaten"]
+[connection signal="early" from="FamDinnerThings2" to="." method="_on_fam_dinner_things_2_early"]
+[connection signal="eaten" from="FamDinnerThings2" to="." method="_on_fam_dinner_things_2_eaten"]
+[connection signal="early" from="FamDinnerThings3" to="." method="_on_fam_dinner_things_3_early"]
+[connection signal="eaten" from="FamDinnerThings3" to="." method="_on_fam_dinner_things_3_eaten"]
+[connection signal="early" from="FamDinnerThings4" to="." method="_on_fam_dinner_things_4_early"]
+[connection signal="eaten" from="FamDinnerThings4" to="." method="_on_fam_dinner_things_4_eaten"]
+[connection signal="timeout" from="Timer" to="FamDinnerThings" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="FamDinnerThings2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="FamDinnerThings3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="FamDinnerThings4" method="_on_timer_timeout"]

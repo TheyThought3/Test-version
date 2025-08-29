@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpht2hqtx4gut"]
+
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="1_ob16c"]
+[ext_resource type="Script" uid="uid://byhrjyhaksyua" path="res://level_three.gd" id="1_uijik"]
+[ext_resource type="Texture2D" uid="uid://cq58snm4kjaiu" path="res://Assets/Graduation.png" id="2_tlgdg"]
+[ext_resource type="PackedScene" uid="uid://dhankrmb81ety" path="res://right_hand.tscn" id="3_pcd1m"]
+[ext_resource type="Texture2D" uid="uid://tlp54645pfbf" path="res://Assets/RIGHT HAND (PNG).png" id="4_02xvr"]
+[ext_resource type="Script" uid="uid://c4d8bf2urdd70" path="res://character_body_2d.gd" id="4_slvu4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pcd1m"]
+texture = ExtResource("2_tlgdg")
+0:44/size_in_atlas = Vector2i(150, 39)
+0:44/0 = 0
+0:0/size_in_atlas = Vector2i(150, 44)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_02xvr"]
+sources/2 = SubResource("TileSetAtlasSource_pcd1m")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slvu4"]
+atlas = ExtResource("4_02xvr")
+region = Rect2(0, 0, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uijik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slvu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tkb"]
+size = Vector2(6, 39)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uijik")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_ob16c")]
+position = Vector2(118, 33)
+
+[node name="GRADUATION" type="TileMapLayer" parent="."]
+z_index = -5
+use_parent_material = true
+scale = Vector2(0.129567, 0.132128)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 20, 0, 2, 0, 0, 0, 44, 0, 0, 0, 1, 0, 235, 255, 2, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_02xvr")
+rendering_quadrant_size = 100
+
+[node name="RIGHT HAND" parent="." instance=ExtResource("3_pcd1m")]
+position = Vector2(94, 15)
+
+[node name="Left hand" type="CharacterBody2D" parent="."]
+position = Vector2(-136, -3)
+script = ExtResource("4_slvu4")
+
+[node name="leftHandAnimation" type="AnimatedSprite2D" parent="Left hand"]
+position = Vector2(-7.62939e-06, -3.8147e-06)
+scale = Vector2(-0.195232, 0.222429)
+sprite_frames = SubResource("SpriteFrames_uijik")
+
+[node name="leftHandArea2D" type="Area2D" parent="Left hand"]
+
+[node name="LeftHandCollisionShape" type="CollisionShape2D" parent="Left hand/leftHandArea2D"]
+position = Vector2(6, -0.5)
+shape = SubResource("RectangleShape2D_j0tkb")

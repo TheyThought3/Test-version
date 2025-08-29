@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfni2qd8154ap"]
+
+[ext_resource type="Texture2D" uid="uid://cr08vuoh83451" path="res://Assets/SEAP canoeing.png" id="1_7hhq0"]
+[ext_resource type="Texture2D" uid="uid://bwe51mffc287o" path="res://Assets/canoe.png" id="2_hj8db"]
+
+[sub_resource type="GDScript" id="GDScript_hj8db"]
+script/source = "extends CharacterBody2D
+
+# [Your other variables]
+var speed: float = 30
+var main_node: Node2D = null
+
+@export var speed_multiplier: float = 2.0
+@export var acceleration_factor: float = 4.0
+@export var friction_factor: float = 3.0
+
+var main_speed: float = 60
+var acceleration: float = 30
+var friction: float = 80
+
+var input_direction: Vector2 = Vector2.ZERO
+var facing_direction: Vector2 = Vector2.DOWN
+var is_moving: bool = false
+var current_state: String = \"down_idle\"
+
+@export var right_speed: float = 100.0 # This is the constant speed to the right
+
+var state = \"normal_movement\"
+var target_position = Vector2(722, -12.5)
+var has_passed_point_x = false
+@export var target_reached_threshold: float = 5.0 # How close is close enough?
+
+func _physics_process(delta: float) -> void:
+	# --- State Transition Condition ---
+	if global_position.x > 500 and not has_passed_point_x:
+		state = \"seek_target\"
+		has_passed_point_x = true # Ensure this logic only runs once
+		print(\"STATE CHANGE: Now seeking target at \", target_position) # Debug line
+
+	# --- State Machine ---
+	if state == \"normal_movement\":
+		# Original movement logic
+		var target_velocity_y = 0.0
+		if Input.is_action_pressed(\"move_up\"):
+			target_velocity_y = -main_speed
+		elif Input.is_action_pressed(\"move_down\"):
+			target_velocity_y = main_speed
+		
+		var target_velocity = Vector2(right_speed, target_velocity_y)
+		velocity = velocity.move_toward(target_velocity, acceleration * delta)
+	
+	elif state == \"seek_target\":
+		# Check if the target has been reached
+		if global_position.distance_to(target_position) < target_reached_threshold:
+			velocity = Vector2.ZERO # Stop the character
+			state = \"target_reached\"
+			print(\"TARGET REACHED: Character has arrived and is now stopped.\")
+			get_tree().change_scene_to_file(\"res://level_13b.tscn\") # Debug line
+		else:
+			# The new movement logic for seeking the target
+			var direction_to_target = (target_position - global_position).normalized()
+			velocity = direction_to_target * right_speed # Or a new speed for seeking
+			print(\"SEEKING: Current velocity is \", velocity) # Debug line
+
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0c62"]
+size = Vector2(175.952, 48)
+
+[node name="level_13" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(52, 50)
+zoom = Vector2(0.85, 0.85)
+
+[node name="SeapCanoeing" type="Sprite2D" parent="."]
+position = Vector2(101, 54)
+texture = ExtResource("1_7hhq0")
+
+[node name="CanoeCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(-245, -79)
+script = SubResource("GDScript_hj8db")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanoeCharacter"]
+position = Vector2(-340, 58)
+rotation = 3.14159
+scale = Vector2(0.871832, 1.0391)
+shape = SubResource("RectangleShape2D_w0c62")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanoeCharacter"]
+position = Vector2(-332, 24)
+scale = Vector2(0.525123, 0.435022)
+texture = ExtResource("2_hj8db")

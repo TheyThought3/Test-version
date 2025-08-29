@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgcy78ckimesk"]
+
+[ext_resource type="Texture2D" uid="uid://bdgrqsrkqmr55" path="res://Assets/Broken egg.png" id="1_s80rl"]
+[ext_resource type="Texture2D" uid="uid://cpc35xo2vbg74" path="res://Assets/together egg.png" id="2_7piv4"]
+[ext_resource type="Script" uid="uid://bb2talqq4wdwf" path="res://game_manager.gd" id="2_gtrp8"]
+[ext_resource type="Script" uid="uid://culr4e2205g68" path="res://egg.gd" id="3_gtrp8"]
+[ext_resource type="Texture2D" uid="uid://c0p6u8uo4vmry" path="res://Assets/easter/Granny flat (easter).png" id="4_7piv4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lxc0"]
+radius = 84.6495
+height = 184.845
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdad3"]
+atlas = ExtResource("1_s80rl")
+region = Rect2(379, 0, 243, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2epbb"]
+atlas = ExtResource("2_7piv4")
+region = Rect2(133, 0, 160, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5xyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdad3")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2epbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="egg" type="Area2D"]
+script = ExtResource("3_gtrp8")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_gtrp8")
+
+[node name="CollisionShape2Degg" type="CollisionShape2D" parent="."]
+z_index = -2
+position = Vector2(0, 8)
+scale = Vector2(0.945073, 1.03871)
+shape = SubResource("CapsuleShape2D_4lxc0")
+one_way_collision_margin = 0.0
+
+[node name="egganimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d5xyp")
+
+[node name="CarRide(easter)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4.76837e-07, -1.5625)
+scale = Vector2(0.229117, 0.1842)
+texture = ExtResource("4_7piv4")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhwj0emtiwtu0"]
+
+[ext_resource type="Script" uid="uid://dorbuv22j032" path="res://level_10.gd" id="1_mqu4h"]
+[ext_resource type="Texture2D" uid="uid://dr4s6pfive6k7" path="res://Assets/IMG_4132.PNG" id="3_p6q33"]
+[ext_resource type="Texture2D" uid="uid://c5r41qn6kr7sw" path="res://Assets/IMG_4133.PNG" id="4_mqu4h"]
+[ext_resource type="Texture2D" uid="uid://c0y18r1tytxdb" path="res://Assets/IMG_4142.PNG" id="5_gnoc6"]
+[ext_resource type="PackedScene" uid="uid://dvukvmwrc4b2e" path="res://lore_rhombus.tscn" id="6_helgx"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="6_mqu4h"]
+
+[node name="level_10" type="Node2D"]
+script = ExtResource("1_mqu4h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, 1)
+
+[node name="lore_rhombus" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-340, -44)
+
+[node name="Img4132" type="Sprite2D" parent="."]
+z_index = -6
+position = Vector2(408, -4)
+scale = Vector2(0.698104, 0.576037)
+texture = ExtResource("3_p6q33")
+
+[node name="Img4133" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(54.875, -0.812475)
+scale = Vector2(0.6502, 0.593203)
+texture = ExtResource("4_mqu4h")
+
+[node name="Img4142" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-342, -67.625)
+scale = Vector2(0.93014, 0.782258)
+texture = ExtResource("5_gnoc6")
+
+[node name="Player" parent="." instance=ExtResource("6_mqu4h")]
+position = Vector2(-136, 111)
+scale = Vector2(10.9687, 10.7906)

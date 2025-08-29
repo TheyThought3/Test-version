@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://cmgjfw6xm5up"]
+
+[ext_resource type="Script" uid="uid://bbtgo74hko2a3" path="res://erik_swimming.gd" id="1_1n1h0"]
+[ext_resource type="Script" uid="uid://b2mnfm3sb50k2" path="res://level_33.gd" id="1_cy73w"]
+[ext_resource type="Texture2D" uid="uid://bkahxqqt716ss" path="res://Assets/message/erikswimming2.png" id="1_vmcxh"]
+[ext_resource type="Texture2D" uid="uid://dfs77gckw4df4" path="res://Assets/message/erikswimming.png" id="2_pd2jp"]
+[ext_resource type="Texture2D" uid="uid://bmdk2aygny6qr" path="res://Assets/message/fatherswimming.png" id="3_1n1h0"]
+[ext_resource type="Script" uid="uid://cm7ddar5cuqnb" path="res://father_swimming.gd" id="4_b8c28"]
+[ext_resource type="Texture2D" uid="uid://c1ro1uqt7yb7k" path="res://Assets/message/fatherswimming2.png" id="4_xlp4e"]
+[ext_resource type="Texture2D" uid="uid://cu7paw1vpjqax" path="res://Assets/message/swimrace.png" id="5_pd2jp"]
+[ext_resource type="Script" uid="uid://cpnkxbbmts126" path="res://fatherswimminganisprite2d.gd" id="7_b8c28"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8c28"]
+radius = 72.0
+height = 368.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cy73w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vmcxh")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pd2jp")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r6yj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1n1h0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xlp4e")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vmcxh"]
+radius = 48.0
+height = 304.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b8c28"]
+a = Vector2(-96, 64)
+b = Vector2(1048, 64)
+
+[node name="level_33" type="Node2D"]
+script = ExtResource("1_cy73w")
+
+[node name="ErikSwimming" type="RigidBody2D" parent="."]
+position = Vector2(776, 536)
+gravity_scale = 0.0
+script = ExtResource("1_1n1h0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ErikSwimming"]
+position = Vector2(-24, 16)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CapsuleShape2D_b8c28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ErikSwimming"]
+position = Vector2(-8, 0)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_cy73w")
+animation = &"left"
+
+[node name="FatherSwimming" type="RigidBody2D" parent="."]
+position = Vector2(880, 520)
+gravity_scale = 0.0
+script = ExtResource("4_b8c28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FatherSwimming"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_7r6yj")
+animation = &"right"
+script = ExtResource("7_b8c28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FatherSwimming"]
+position = Vector2(-32, 32)
+scale = Vector2(0.301091, 0.292369)
+shape = SubResource("CapsuleShape2D_vmcxh")
+
+[node name="Swimrace" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(575, 324.25)
+scale = Vector2(1.62994, 1.39849)
+texture = ExtResource("5_pd2jp")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(96, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_b8c28")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 187.0
+offset_bottom = 151.0
+scale = Vector2(2.79844, 4.93255)
+text = "hit F to swim"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

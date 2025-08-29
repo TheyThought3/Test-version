@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://mic8mvwo7m4h"]
+
+[ext_resource type="Script" uid="uid://bulobph1c8tui" path="res://level_25.gd" id="1_hn2da"]
+[ext_resource type="Texture2D" uid="uid://x22wwo8gw26u" path="res://Assets/16px/awake.png" id="2_vsjbg"]
+[ext_resource type="Texture2D" uid="uid://c0j6vx1c68jmk" path="res://Assets/16px/not awake.png" id="3_tpqsn"]
+[ext_resource type="Texture2D" uid="uid://btpol8f066b60" path="res://Assets/LoreDrops/black.png" id="4_vsjbg"]
+
+[node name="level_25" type="Node2D"]
+script = ExtResource("1_hn2da")
+
+[node name="NotAwake" type="Sprite2D" parent="."]
+position = Vector2(232, 144)
+scale = Vector2(1.00433, 0.99654)
+texture = ExtResource("3_tpqsn")
+
+[node name="Awake" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(232, 144)
+scale = Vector2(1.00433, 0.99654)
+texture = ExtResource("2_vsjbg")
+
+[node name="mtimer" type="Timer" parent="."]
+
+[node name="tsk" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Tsk Tsk dont be clicking early
+Reeeedo"
+
+[node name="fail" type="Label" parent="."]
+visible = false
+offset_left = 272.0
+offset_top = 88.0
+offset_right = 312.0
+offset_bottom = 112.0
+text = "Fail"
+
+[node name="intro" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 603.0
+offset_bottom = 143.0
+scale = Vector2(0.558894, 0.556134)
+text = "super easy just stay awake. click to wake up, 
+youll fall asleep on a random time (to 10
+ decimals idk why) between 0.4 and 2, if you
+ havent woken up by the time its time to fall 
+asleep again you loose : )"
+
+[node name="points" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 56.0
+offset_bottom = 79.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(224, 144)
+zoom = Vector2(2, 2)
+
+[node name="Black" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(224, 152)
+scale = Vector2(1.71212, 1.74567)
+texture = ExtResource("4_vsjbg")
+
+[connection signal="timeout" from="mtimer" to="." method="_on_timer_timeout"]

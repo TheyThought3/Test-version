@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyh3julkebnwm"]
+
+[ext_resource type="Script" uid="uid://6omld3twt1tb" path="res://level_8.gd" id="1_dfxo2"]
+[ext_resource type="Texture2D" uid="uid://cqu4nupwxun31" path="res://Assets/Screenshot 2025-08-12 at 21-36-12 Photo - Google Photos.png" id="1_q2rxj"]
+
+[node name="level_8" type="Node2D"]
+script = ExtResource("1_dfxo2")
+
+[node name="Screenshot2025-08-12At21-36-12Photo-GooglePhotos" type="Sprite2D" parent="."]
+position = Vector2(65.5, 28.875)
+scale = Vector2(0.997951, 0.868926)
+texture = ExtResource("1_q2rxj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 34)
+zoom = Vector2(3, 3)
+
+[node name="Button_A" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/icon_disabled_color = Color(0.597126, 0.287682, 0.212157, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.670081, 0.187177, 0.263619, 1)
+theme_override_colors/icon_hover_color = Color(0.596078, 0.286275, 0.211765, 1)
+theme_override_colors/icon_pressed_color = Color(0.670081, 0.187177, 0.263619, 1)
+text = "A"
+
+[node name="Button_C" type="Button" parent="."]
+offset_left = 18.0
+offset_right = 37.0
+offset_bottom = 31.0
+text = "C"
+
+[node name="Button_D" type="Button" parent="."]
+offset_left = 37.0
+offset_right = 55.0
+offset_bottom = 31.0
+text = "D"
+
+[node name="Button_E" type="Button" parent="."]
+offset_left = 57.0
+offset_right = 75.0
+offset_bottom = 31.0
+text = "E"
+
+[node name="Button_G" type="Button" parent="."]
+offset_left = 74.0
+offset_right = 92.0
+offset_bottom = 31.0
+text = "G"
+
+[node name="Button_I" type="Button" parent="."]
+offset_left = 94.0
+offset_right = 115.0
+offset_bottom = 31.0
+text = "I"
+
+[node name="Button_R" type="Button" parent="."]
+offset_left = 94.0
+offset_top = 31.0
+offset_right = 115.0
+offset_bottom = 62.0
+text = "R"
+
+[node name="Button_P" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 31.0
+offset_right = 94.0
+offset_bottom = 62.0
+text = "P"
+
+[node name="Button_O" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 31.0
+offset_right = 77.0
+offset_bottom = 62.0
+text = "O"
+
+[node name="Button_N" type="Button" parent="."]
+offset_left = 36.0
+offset_top = 31.0
+offset_right = 57.0
+offset_bottom = 62.0
+text = "N"
+
+[node name="Button_L" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 31.0
+offset_right = 39.0
+offset_bottom = 62.0
+text = "L"
+
+[node name="Button_J" type="Button" parent="."]
+offset_top = 31.0
+offset_right = 21.0
+offset_bottom = 62.0
+text = "J"
+
+[node name="Button_S" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 62.0
+offset_right = 30.0
+offset_bottom = 93.0
+text = "S"
+
+[node name="Button_T" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 62.0
+offset_right = 50.0
+offset_bottom = 93.0
+text = "T"
+
+[node name="Button_U" type="Button" parent="."]
+offset_left = 50.0
+offset_top = 62.0
+offset_right = 71.0
+offset_bottom = 93.0
+text = "U"
+
+[node name="Button_W" type="Button" parent="."]
+offset_left = 71.0
+offset_top = 62.0
+offset_right = 92.0
+offset_bottom = 93.0
+text = "W"
+
+[node name="Button_backspace" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 94.0
+offset_right = 106.0
+offset_bottom = 125.0
+text = "backspace"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.0
+offset_top = -27.0
+offset_right = 184.0
+offset_bottom = -4.0
+text = "Unscrample... good luck"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -117.0
+offset_top = -69.0
+offset_right = 169.0
+offset_bottom = 110.0
+scale = Vector2(0.413557, 0.539317)
+text = "It is 29 digets long, I forgot the 
+exact password 3 times while coding 
+it in.... good luck (there are a-3 e-5 
+i-2 l-3 n-2 p-2 t-3 (rest have one))
+no abrieviations or spaces... its
+what i said after this night at 
+aprox 12:30
+Update : 4 forgetting"

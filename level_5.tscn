@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxp8xu61qu4t"]
+
+[ext_resource type="Script" uid="uid://bimt65dfh405t" path="res://level_5.gd" id="1_cp4ax"]
+[ext_resource type="Texture2D" uid="uid://dmxbrbp1cl1jq" path="res://Assets/Croziers classroom.png" id="1_mg3yy"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="2_cp4ax"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_br4so"]
+texture = ExtResource("1_mg3yy")
+7:3/size_in_atlas = Vector2i(58, 32)
+7:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p6ijf"]
+sources/0 = SubResource("TileSetAtlasSource_br4so")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg3yy"]
+size = Vector2(0.626374, 20)
+
+[node name="level_5" type="Node2D"]
+script = ExtResource("1_cp4ax")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.26472, 1, 0.935524, 1)
+self_modulate = Color(0.266667, 1, 0.937255, 1)
+visibility_layer = 7
+offset_left = 157.0
+offset_top = -518.0
+offset_right = 578.0
+offset_bottom = -417.0
+text = "K Soooo, probably could have spent more then 15
+ minuites on MS paint, but chat gpt wasnt giving me 
+what i wanted and another solution is difficult, just go 
+to your seat. (my fav part is the pride flag btm left)"
+
+[node name="the only layer" type="TileMapLayer" parent="."]
+z_index = -1
+use_parent_material = true
+tile_map_data = PackedByteArray(0, 0, 29, 0, 239, 255, 0, 0, 7, 0, 3, 0, 0, 0)
+tile_set = SubResource("TileSet_p6ijf")
+
+[node name="Chair A2d" type="Area2D" parent="."]
+position = Vector2(867, -95)
+scale = Vector2(57.4736, -1.83276)
+
+[node name="Chair CS" type="CollisionShape2D" parent="Chair A2d"]
+position = Vector2(-0.0521979, 0.545625)
+shape = SubResource("RectangleShape2D_mg3yy")
+
+[node name="Player" parent="." instance=ExtResource("2_cp4ax")]
+position = Vector2(90, -497)
+scale = Vector2(3.83259, 3.46978)
+
+[node name="level five camera" type="Camera2D" parent="."]
+position = Vector2(472, -264)
+scale = Vector2(57.4736, -1.83276)
+zoom = Vector2(1.27, 1.27)
+
+[connection signal="body_entered" from="Chair A2d" to="." method="_on_chair_a_2d_body_entered"]

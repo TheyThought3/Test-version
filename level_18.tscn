@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpmhawig5ccnr"]
+
+[ext_resource type="Script" uid="uid://pboekdoc4wg3" path="res://level_18.gd" id="1_0ef0j"]
+[ext_resource type="PackedScene" uid="uid://ce211r70na8c8" path="res://present.tscn" id="3_1jsbk"]
+[ext_resource type="Texture2D" uid="uid://c65qyx2txr766" path="res://Assets/16px/moose.png" id="4_0ef0j"]
+[ext_resource type="Texture2D" uid="uid://dndctut21lrip" path="res://Assets/16px/bat.png" id="5_quddy"]
+[ext_resource type="Texture2D" uid="uid://de1xqq74lrmoi" path="res://Assets/16px/puzzle.png" id="6_xtdvq"]
+[ext_resource type="Texture2D" uid="uid://drxxolkpdnemk" path="res://Assets/16px/charger.png" id="7_vbw2d"]
+[ext_resource type="Texture2D" uid="uid://fkmkvkisscci" path="res://Assets/pastel pink.png" id="8_fwa1i"]
+
+[node name="level_18" type="Node2D"]
+script = ExtResource("1_0ef0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PastelPink" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(59.5, 57.5)
+scale = Vector2(8.43111, 5.31111)
+texture = ExtResource("8_fwa1i")
+
+[node name="present_sweater_1" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(-397, -192)
+scale = Vector2(0.679189, 0.667251)
+reveal_texture = ExtResource("4_0ef0j")
+
+[node name="present_bat_2" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(-408, 119)
+scale = Vector2(0.669952, 0.695288)
+reveal_texture = ExtResource("5_quddy")
+
+[node name="present_puzzle_1" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(-131, -182)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("6_xtdvq")
+
+[node name="present_puzzle_2" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(-131, 127)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("6_xtdvq")
+
+[node name="present_charger_2" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(131, 132)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("7_vbw2d")
+
+[node name="present_sweater_2" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(133, -179)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("4_0ef0j")
+
+[node name="present_charger_1" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(407, -179)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("7_vbw2d")
+
+[node name="present_bat_1" parent="." instance=ExtResource("3_1jsbk")]
+position = Vector2(412, 128)
+scale = Vector2(0.65502, 0.612346)
+reveal_texture = ExtResource("5_quddy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -561.0
+offset_top = 283.0
+offset_right = -352.0
+offset_bottom = 306.0
+scale = Vector2(1.54037, 1.64789)
+text = "Left click you'll figure it out"

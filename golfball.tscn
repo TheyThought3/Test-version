@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b10h7dnofwesf"]
+
+[ext_resource type="Script" uid="uid://cpjadn0jsirce" path="res://golfball.gd" id="1_nh77r"]
+[ext_resource type="Texture2D" uid="uid://bv4l8d5mxl3ue" path="res://Assets/LoreDrops/golf ball.png" id="1_vpxt1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nh77r"]
+radius = 16.0
+
+[node name="golfball" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_nh77r")
+shot_power = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("CircleShape2D_nh77r")
+
+[node name="GolfBall" type="Sprite2D" parent="."]
+position = Vector2(4.57764e-05, 3.05176e-05)
+scale = Vector2(0.068, 0.068)
+texture = ExtResource("1_vpxt1")
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color(0.235294, 1, 1, 1)

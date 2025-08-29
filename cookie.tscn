@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://r48u7q886olr"]
+
+[ext_resource type="Script" uid="uid://dudw4cqaquu5v" path="res://area_2d.gd" id="1_4g1sd"]
+[ext_resource type="Texture2D" uid="uid://q7wnynm4e6r0" path="res://Assets/fairis wheel/cookie.png" id="2_cd8qg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cl6ut"]
+radius = 115.104
+
+[node name="cookie" type="Area2D"]
+script = ExtResource("1_4g1sd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(326, 308)
+shape = SubResource("CircleShape2D_cl6ut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(352, 286)
+texture = ExtResource("2_cd8qg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbg4evpa4nl3"]
+
+[ext_resource type="Script" uid="uid://b04fvuor4jpjs" path="res://level_17b.gd" id="1_flenh"]
+[ext_resource type="Texture2D" uid="uid://sy34q4mc03i8" path="res://Assets/LoreDrops/Lore_(5star).png" id="1_w67xo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w67xo"]
+size = Vector2(22.1031, 20)
+
+[node name="level_17b" type="Node2D"]
+script = ExtResource("1_flenh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 4
+
+[node name="go back" type="Area2D" parent="."]
+position = Vector2(-480, 144)
+scale = Vector2(52.3982, 101.715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="go back"]
+position = Vector2(-1.22142, -0.786511)
+rotation = -0.00426689
+shape = SubResource("RectangleShape2D_w67xo")
+
+[node name="go on" type="Area2D" parent="."]
+position = Vector2(704, 48)
+scale = Vector2(52.3982, 101.715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="go on"]
+position = Vector2(-2.38727, -0.781537)
+rotation = -0.00426689
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_w67xo")
+
+[node name="Lore(5Star)" type="Sprite2D" parent="."]
+position = Vector2(-360, 104)
+rotation = -3.08888
+scale = Vector2(52.3982, 101.715)
+texture = ExtResource("1_w67xo")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -408.0
+offset_top = -88.0
+offset_right = -368.0
+offset_bottom = -65.0
+scale = Vector2(2.27928, 2.85)
+text = "go back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -304.0
+offset_top = -304.0
+offset_right = 307.0
+offset_bottom = -229.0
+text = "I watched that for ten minuites while listening to music. My favouite one so far.
+I thought it would take a hot minuite to do so I started a stopwatch from the 
+start of the drawing to the end of coding... whats 2.75h between freinds
+but so so so so fricken worth it"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 208.0
+offset_top = -56.0
+offset_right = 341.0
+offset_bottom = -33.0
+scale = Vector2(1.59241, 2.77073)
+text = "ITs move on time"
+
+[connection signal="input_event" from="go back" to="." method="_on_go_back_input_event"]
+[connection signal="input_event" from="go on" to="." method="_on_go_on_input_event"]

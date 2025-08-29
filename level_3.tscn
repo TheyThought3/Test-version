@@ -1,0 +1,125 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5wdk4gkhpw7l"]
+
+[ext_resource type="Script" uid="uid://cud4s5tdyq2ob" path="res://level_thre.gd" id="1_6p2dc"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="2_fmu3g"]
+[ext_resource type="Texture2D" uid="uid://cq58snm4kjaiu" path="res://Assets/Graduation.png" id="3_7ds5r"]
+[ext_resource type="PackedScene" uid="uid://dhankrmb81ety" path="res://right_hand.tscn" id="4_liaj6"]
+[ext_resource type="Script" uid="uid://b1r3j7bwm1chx" path="res://left_hand_area_2d.gd" id="5_b60u5"]
+[ext_resource type="Texture2D" uid="uid://tlp54645pfbf" path="res://Assets/RIGHT HAND (PNG).png" id="6_kmy7e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6fd2"]
+texture = ExtResource("3_7ds5r")
+0:44/size_in_atlas = Vector2i(150, 39)
+0:44/0 = 0
+0:0/size_in_atlas = Vector2i(150, 44)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1dr4n"]
+sources/2 = SubResource("TileSetAtlasSource_g6fd2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7rod"]
+size = Vector2(6, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slvu4"]
+atlas = ExtResource("6_kmy7e")
+region = Rect2(0, 0, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1o1vq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slvu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6p2dc"]
+normal = Vector2(1, 0)
+distance = 0.270459
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fmu3g"]
+normal = Vector2(1, 0)
+distance = 0.270459
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ds5r"]
+normal = Vector2(1, 0)
+distance = 0.270459
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_liaj6"]
+normal = Vector2(1, 0)
+distance = 0.270459
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource("1_6p2dc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("2_fmu3g")]
+position = Vector2(118, 28)
+
+[node name="GRADUATION" type="TileMapLayer" parent="."]
+z_index = -5
+use_parent_material = true
+scale = Vector2(0.129567, 0.132128)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 20, 0, 2, 0, 0, 0, 44, 0, 0, 0, 1, 0, 235, 255, 2, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_1dr4n")
+rendering_quadrant_size = 100
+
+[node name="RIGHT HAND" parent="." instance=ExtResource("4_liaj6")]
+position = Vector2(91, 10)
+
+[node name="leftHandArea2D" type="Area2D" parent="."]
+position = Vector2(-93, -5)
+script = ExtResource("5_b60u5")
+
+[node name="LeftHandCollisionShape" type="CollisionShape2D" parent="leftHandArea2D"]
+position = Vector2(6, -0.5)
+shape = SubResource("RectangleShape2D_x7rod")
+
+[node name="leftHandAnimation" type="AnimatedSprite2D" parent="leftHandArea2D"]
+position = Vector2(1, 1)
+rotation = 3.14159
+scale = Vector2(0.195232, -0.222429)
+sprite_frames = SubResource("SpriteFrames_1o1vq")
+
+[node name="left border" type="StaticBody2D" parent="."]
+position = Vector2(-143.289, 5.87944e-08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left border"]
+position = Vector2(-10.711, 1)
+shape = SubResource("WorldBoundaryShape2D_6p2dc")
+
+[node name="Right border" type="StaticBody2D" parent="."]
+position = Vector2(144.291, -0.986407)
+rotation = 3.13833
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right border"]
+position = Vector2(-14.7057, -1.03445)
+shape = SubResource("WorldBoundaryShape2D_fmu3g")
+
+[node name="top border" type="StaticBody2D" parent="."]
+position = Vector2(1.00208, -76.9398)
+rotation = 1.57339
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top border"]
+position = Vector2(-13.0576, 1.03597)
+shape = SubResource("WorldBoundaryShape2D_7ds5r")
+
+[node name="bottom border" type="StaticBody2D" parent="."]
+position = Vector2(0, 79.899)
+rotation = -1.56907
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
+position = Vector2(-5.10101, 0.00878361)
+shape = SubResource("WorldBoundaryShape2D_liaj6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -59.0
+offset_right = 227.0
+offset_bottom = -36.0
+scale = Vector2(0.467682, 0.760719)
+text = "You'd better be able to figure this out"

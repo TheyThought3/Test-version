@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://7187f3k2heeq"]
+
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="1_5pu08"]
+[ext_resource type="Script" uid="uid://b8kiloitsfp2q" path="res://level_4.gd" id="1_xcfcc"]
+[ext_resource type="Texture2D" uid="uid://cc8ignbu2h1pk" path="res://Assets/IMG_2425.PNG" id="3_48hld"]
+[ext_resource type="Texture2D" uid="uid://c3nktuqgcjhg2" path="res://Assets/AvaAngry.PNG" id="4_l45re"]
+
+[node name="Level 4" type="Node2D"]
+script = ExtResource("1_xcfcc")
+
+[node name="Button1" type="Button" parent="."]
+offset_top = -9.0
+offset_right = 18.0
+offset_bottom = 22.0
+scale = Vector2(0.63877, 0.560126)
+text = "1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 14.0
+offset_top = -9.0
+offset_right = 32.0
+offset_bottom = 22.0
+scale = Vector2(0.63877, 0.560126)
+text = "2"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 28.0
+offset_top = -9.0
+offset_right = 46.0
+offset_bottom = 22.0
+scale = Vector2(0.63877, 0.560126)
+text = "3"
+
+[node name="Button4" type="Button" parent="."]
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 41.0
+scale = Vector2(0.63877, 0.560126)
+text = "4"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+scale = Vector2(0.63877, 0.560126)
+text = "5"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 41.0
+scale = Vector2(0.63877, 0.560126)
+text = "6"
+
+[node name="Button7" type="Button" parent="."]
+offset_top = 29.0
+offset_right = 18.0
+offset_bottom = 60.0
+scale = Vector2(0.63877, 0.560126)
+text = "7"
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 29.0
+offset_right = 32.0
+offset_bottom = 60.0
+scale = Vector2(0.63877, 0.560126)
+text = "8"
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 28.0
+offset_top = 29.0
+offset_right = 46.0
+offset_bottom = 60.0
+scale = Vector2(0.63877, 0.560126)
+text = "9"
+
+[node name="Button0" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 48.0
+offset_right = 32.0
+offset_bottom = 79.0
+scale = Vector2(0.63877, 0.560126)
+text = "0"
+
+[node name="BackspaceButton" type="Button" parent="."]
+offset_left = -21.0
+offset_top = 78.0
+offset_right = 68.0
+offset_bottom = 109.0
+text = "backspace"
+
+[node name="Player" parent="." instance=ExtResource("1_5pu08")]
+position = Vector2(-7, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+limit_left = -197
+limit_top = -135
+limit_right = 178
+limit_bottom = 182
+position_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -54.0
+offset_right = 85.0
+offset_bottom = -22.0
+text = "Left  Click"
+
+[node name="Img2425" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(88, 23)
+scale = Vector2(0.146538, 0.144475)
+texture = ExtResource("3_48hld")
+
+[node name="AvaAngry" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(-100.5, 23.4999)
+scale = Vector2(0.322951, 0.295853)
+texture = ExtResource("4_l45re")
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 0.352941, 1)
+offset_left = 10.0
+offset_top = -32.0
+offset_right = 211.0
+offset_bottom = -9.00001
+scale = Vector2(0.534265, 0.665238)
+text = "Its Just me phone number"
+
+[connection signal="pressed" from="Button1" to="." method="_on__pressed"]

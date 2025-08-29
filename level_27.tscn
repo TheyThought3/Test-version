@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2hgbdgm7iwq2"]
+
+[ext_resource type="Script" uid="uid://dygaipwu81js4" path="res://level_27.gd" id="1_augc8"]
+[ext_resource type="Texture2D" uid="uid://gtikl83oix3t" path="res://Assets/famDinner/IMG_7016.PNG" id="1_byh3w"]
+[ext_resource type="Texture2D" uid="uid://c334cepj6i7ev" path="res://Assets/famDinner/IMG_4490.PNG" id="2_a2byn"]
+[ext_resource type="Texture2D" uid="uid://btpol8f066b60" path="res://Assets/LoreDrops/black.png" id="4_qsib1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toojk"]
+size = Vector2(138, 66)
+
+[node name="level_27" type="Node2D"]
+script = ExtResource("1_augc8")
+metadata/_edit_horizontal_guides_ = [-704.0]
+
+[node name="Img7016" type="Sprite2D" parent="."]
+position = Vector2(252, 544)
+scale = Vector2(1.00599, 1.00276)
+texture = ExtResource("1_byh3w")
+
+[node name="Img4490" type="Sprite2D" parent="."]
+position = Vector2(252, 66)
+scale = Vector2(0.430769, 0.418919)
+texture = ExtResource("2_a2byn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(443, 959)
+shape = SubResource("RectangleShape2D_toojk")
+
+[node name="Black" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(212, 596)
+scale = Vector2(8.57143, 7.77855)
+texture = ExtResource("4_qsib1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(224, 544)
+zoom = Vector2(0.6, 0.6)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -560.0
+offset_top = 176.0
+offset_right = -435.0
+offset_bottom = 199.0
+scale = Vector2(4.13465, 3.29993)
+text = "Your turn now!!!"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwcbr6ssqsbyc"]
+
+[ext_resource type="Script" uid="uid://44hlwfyu1gsn" path="res://fam_dinner_things.gd" id="1_hqpgp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l1p86"]
+radius = 571.071
+
+[node name="FamDinnerThings" type="Area2D"]
+script = ExtResource("1_hqpgp")
+
+[node name="eatenSprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.43047, 0.420235)
+shape = SubResource("CircleShape2D_l1p86")
+
+[node name="fullSprite" type="Sprite2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

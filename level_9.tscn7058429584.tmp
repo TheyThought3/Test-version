@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw5jxj14mkofi"]
+
+[ext_resource type="Script" uid="uid://lsdkd1m48aty" path="res://level_9.gd" id="1_a721k"]
+[ext_resource type="PackedScene" uid="uid://bgcy78ckimesk" path="res://egg.tscn" id="1_ddys5"]
+[ext_resource type="Texture2D" uid="uid://d2pr4g1whjbs4" path="res://Assets/easter/car ride(easter).png" id="2_fxc0e"]
+[ext_resource type="Texture2D" uid="uid://dfle02ribjyux" path="res://Assets/easter/Love On The Spectrum (easter).png" id="3_xx8ku"]
+[ext_resource type="Texture2D" uid="uid://c0p6u8uo4vmry" path="res://Assets/easter/Granny flat (easter).png" id="4_a721k"]
+[ext_resource type="Texture2D" uid="uid://b52qx6qpq435g" path="res://Assets/easter/trip planning group (easter).png" id="5_7amt0"]
+[ext_resource type="Texture2D" uid="uid://bua23yxkg5b8e" path="res://Assets/easter/the kids table (easter).png" id="6_w5e11"]
+
+[node name="level_9" type="Node2D"]
+script = ExtResource("1_a721k")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+
+[node name="egg_driving1" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-489, -212)
+reveal_texture = ExtResource("2_fxc0e")
+
+[node name="egg_love1" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-313, -214)
+reveal_texture = ExtResource("3_xx8ku")
+
+[node name="egg_flat1" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-136, -214)
+reveal_texture = ExtResource("4_a721k")
+
+[node name="egg_love2" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(43, -214)
+reveal_texture = ExtResource("3_xx8ku")
+
+[node name="egg_trip1" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(220, -214)
+reveal_texture = ExtResource("5_7amt0")
+
+[node name="egg_flat2" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-490, 18)
+reveal_texture = ExtResource("4_a721k")
+
+[node name="egg_trip2" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-318, 16)
+reveal_texture = ExtResource("5_7amt0")
+
+[node name="egg_kids1" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(-141, 9)
+reveal_texture = ExtResource("6_w5e11")
+
+[node name="egg_kids2" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(41, 11)
+reveal_texture = ExtResource("6_w5e11")
+
+[node name="egg_driving2" parent="." instance=ExtResource("1_ddys5")]
+position = Vector2(222, 4)
+reveal_texture = ExtResource("2_fxc0e")

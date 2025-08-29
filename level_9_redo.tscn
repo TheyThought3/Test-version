@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://ugkf3f10xa8u"]
+
+[ext_resource type="Script" uid="uid://mu8lir86jjfq" path="res://level_9_redo.gd" id="1_kfgp2"]
+[ext_resource type="Texture2D" uid="uid://dfle02ribjyux" path="res://Assets/easter/Love On The Spectrum (easter).png" id="2_lkkf2"]
+[ext_resource type="Texture2D" uid="uid://c0p6u8uo4vmry" path="res://Assets/easter/Granny flat (easter).png" id="3_kfgp2"]
+[ext_resource type="Texture2D" uid="uid://b52qx6qpq435g" path="res://Assets/easter/trip planning group (easter).png" id="4_ua782"]
+[ext_resource type="Texture2D" uid="uid://d2pr4g1whjbs4" path="res://Assets/easter/car ride(easter).png" id="5_j75hr"]
+[ext_resource type="Texture2D" uid="uid://bua23yxkg5b8e" path="res://Assets/easter/the kids table (easter).png" id="6_32g15"]
+[ext_resource type="PackedScene" uid="uid://btle8savv6klv" path="res://eggredo.tscn" id="7_kfgp2"]
+[ext_resource type="Texture2D" uid="uid://fkmkvkisscci" path="res://Assets/pastel pink.png" id="8_ua782"]
+
+[node name="level_9Redo" type="Node2D"]
+script = ExtResource("1_kfgp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="egg_kids1" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-434, -197)
+reveal_texture = ExtResource("6_32g15")
+
+[node name="egg_kids2" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-259, 110)
+reveal_texture = ExtResource("6_32g15")
+
+[node name="egg_granny1" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-450, 106)
+reveal_texture = ExtResource("3_kfgp2")
+
+[node name="egg_love1" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-253, -190)
+reveal_texture = ExtResource("2_lkkf2")
+
+[node name="egg_car1" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-54, -186)
+reveal_texture = ExtResource("5_j75hr")
+
+[node name="egg_car2" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(-54, 106)
+reveal_texture = ExtResource("5_j75hr")
+
+[node name="egg_trip1" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(145, 106)
+reveal_texture = ExtResource("4_ua782")
+
+[node name="egg_granny2" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(147, -153)
+reveal_texture = ExtResource("3_kfgp2")
+
+[node name="egg_trip2" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(346, -166)
+reveal_texture = ExtResource("4_ua782")
+
+[node name="egg_love2" parent="." instance=ExtResource("7_kfgp2")]
+position = Vector2(352, 106)
+reveal_texture = ExtResource("2_lkkf2")
+
+[node name="PastelPink" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(59.5, 57.5)
+scale = Vector2(8.43111, 5.31111)
+texture = ExtResource("8_ua782")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -548.0
+offset_top = 263.0
+offset_right = -300.0
+offset_bottom = 286.0
+scale = Vector2(1.2716, 2.13516)
+text = "Left click you'll know what to do"

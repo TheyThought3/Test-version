@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce211r70na8c8"]
+
+[ext_resource type="Script" uid="uid://gqev7pdnbh31" path="res://present.gd" id="1_5ylp3"]
+[ext_resource type="Texture2D" uid="uid://c0p6u8uo4vmry" path="res://Assets/easter/Granny flat (easter).png" id="1_hdxfg"]
+[ext_resource type="Texture2D" uid="uid://d28rfh541132e" path="res://Assets/easter/present apart.png" id="2_5ylp3"]
+[ext_resource type="Texture2D" uid="uid://cchddoutbpeva" path="res://Assets/easter/present together.png" id="3_eqnvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdxfg"]
+size = Vector2(306.855, 206.397)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufadg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ylp3")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eqnvo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="present" type="Area2D"]
+script = ExtResource("1_5ylp3")
+
+[node name="CollisionShape2Dpresent" type="CollisionShape2D" parent="."]
+z_index = -2
+position = Vector2(0, 104.806)
+scale = Vector2(0.945073, 1.03871)
+shape = SubResource("RectangleShape2D_hdxfg")
+one_way_collision_margin = 0.0
+
+[node name="sprite2dpresent" type="Sprite2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(-4.76837e-07, -1.5625)
+scale = Vector2(0.229117, 0.1842)
+texture = ExtResource("1_hdxfg")
+
+[node name="present" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ufadg")
+autoplay = "default"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

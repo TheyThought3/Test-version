@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqosinborla3d"]
+
+[ext_resource type="Script" uid="uid://bsvoh76plm5sj" path="res://level_16.gd" id="1_0nd23"]
+[ext_resource type="Texture2D" uid="uid://dvudgm30lbha3" path="res://Assets/halloween invite.png" id="1_kj6lc"]
+[ext_resource type="Texture2D" uid="uid://b3lj8t88likvi" path="res://Assets/LoreDrops/Lore_(star).png" id="3_1j2m5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj6lc"]
+size = Vector2(344, 224)
+
+[node name="level_16" type="Node2D"]
+script = ExtResource("1_0nd23")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HalloweenInvite" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(1.52588e-05, 3.99999)
+scale = Vector2(0.756899, 0.84485)
+texture = ExtResource("1_kj6lc")
+
+[node name="Area2Dyes" type="Area2D" parent="."]
+position = Vector2(-328, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dyes"]
+position = Vector2(12, -32)
+shape = SubResource("RectangleShape2D_kj6lc")
+
+[node name="Area2Dno" type="Area2D" parent="."]
+position = Vector2(208, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dno"]
+position = Vector2(12, -32)
+shape = SubResource("RectangleShape2D_kj6lc")
+
+[node name="Lore(star)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 288)
+scale = Vector2(-1.27277, 1.38934)
+texture = ExtResource("3_1j2m5")
+
+[connection signal="input_event" from="Area2Dyes" to="." method="_on_area_2_dyes_input_event"]
+[connection signal="input_event" from="Area2Dno" to="." method="_on_area_2_dno_input_event"]

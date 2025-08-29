@@ -1,0 +1,212 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhwj0emtiwtu0"]
+
+[ext_resource type="Script" uid="uid://dorbuv22j032" path="res://level_10.gd" id="1_mqu4h"]
+[ext_resource type="PackedScene" uid="uid://bedi2pwa2syi7" path="res://lore_5_star.tscn" id="2_gnoc6"]
+[ext_resource type="Texture2D" uid="uid://dr4s6pfive6k7" path="res://Assets/IMG_4132.PNG" id="3_p6q33"]
+[ext_resource type="Texture2D" uid="uid://c5r41qn6kr7sw" path="res://Assets/IMG_4133.PNG" id="4_mqu4h"]
+[ext_resource type="PackedScene" uid="uid://cyrlagkp5tww8" path="res://lore_6_star.tscn" id="4_pyblp"]
+[ext_resource type="Texture2D" uid="uid://c0y18r1tytxdb" path="res://Assets/IMG_4142.PNG" id="5_gnoc6"]
+[ext_resource type="PackedScene" uid="uid://cq3w815b8mbs" path="res://lore_paper.tscn" id="5_jjmbq"]
+[ext_resource type="PackedScene" uid="uid://dvukvmwrc4b2e" path="res://lore_rhombus.tscn" id="6_helgx"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="6_mqu4h"]
+[ext_resource type="PackedScene" uid="uid://bmypbilslvw6a" path="res://justdonttouch.tscn" id="10_jjmbq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyblp"]
+
+[node name="level_10" type="Node2D"]
+script = ExtResource("1_mqu4h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, 1)
+
+[node name="lore_rhombus" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-330, -673)
+
+[node name="Img4132" type="Sprite2D" parent="."]
+z_index = -6
+position = Vector2(408, -4)
+scale = Vector2(0.698104, 0.576037)
+texture = ExtResource("3_p6q33")
+
+[node name="Img4133" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(54.875, -0.812475)
+scale = Vector2(0.6502, 0.593203)
+texture = ExtResource("4_mqu4h")
+
+[node name="Img4142" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-344, -28)
+scale = Vector2(0.93014, 0.782258)
+texture = ExtResource("5_gnoc6")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("6_mqu4h")]
+position = Vector2(-136, 111)
+scale = Vector2(10.9687, 10.7906)
+
+[node name="Lore_5star" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(-24, -430)
+
+[node name="lore_6star" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(128, -1307)
+
+[node name="lore_paper" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(-80, -920)
+
+[node name="Lore_5star2" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(515, -679)
+
+[node name="lore_rhombus2" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(403, -1372)
+
+[node name="lore_6star2" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-542, -1121)
+
+[node name="Lore_5star3" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(-278, -1644)
+
+[node name="lore_paper2" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(77, -1969)
+rotation = 0.988036
+
+[node name="lore_rhombus3" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-454, -2015)
+
+[node name="lore_paper3" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(553, -1698)
+
+[node name="lore_6star3" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-161, -2475)
+rotation = 0.988036
+
+[node name="lore_rhombus4" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-583, -2724)
+rotation = -0.302675
+
+[node name="lore_6star4" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-125, -3358)
+rotation = 0.685361
+
+[node name="lore_paper4" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(-333, -2971)
+rotation = -0.302675
+
+[node name="Lore_5star4" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(262, -2730)
+rotation = 0.685361
+
+[node name="lore_rhombus5" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(150, -3423)
+rotation = 0.685361
+
+[node name="lore_6star5" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-795, -3172)
+rotation = -0.302675
+
+[node name="Lore_5star5" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(-531, -3695)
+rotation = -0.302675
+
+[node name="lore_paper5" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(-176, -4020)
+rotation = -0.302675
+
+[node name="lore_rhombus6" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-707, -4066)
+rotation = -0.302675
+
+[node name="lore_paper6" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(300, -3749)
+rotation = 0.685361
+
+[node name="lore_6star6" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-414, -4526)
+rotation = -0.302675
+
+[node name="lore_6star7" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(101, -4680)
+rotation = 0.988036
+
+[node name="lore_rhombus7" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-321, -4929)
+rotation = -0.302675
+
+[node name="lore_6star8" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(137, -5563)
+rotation = 0.685361
+
+[node name="lore_paper7" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(-71, -5176)
+rotation = -0.302675
+
+[node name="Lore_5star6" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(524, -4935)
+rotation = 0.685361
+
+[node name="lore_rhombus8" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(412, -5628)
+rotation = 0.685361
+
+[node name="lore_6star9" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-533, -5377)
+rotation = -0.302675
+
+[node name="Lore_5star7" parent="." instance=ExtResource("2_gnoc6")]
+position = Vector2(-269, -5900)
+rotation = -0.302675
+
+[node name="lore_paper8" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(86, -6225)
+rotation = -0.302675
+
+[node name="lore_rhombus9" parent="." instance=ExtResource("6_helgx")]
+position = Vector2(-445, -6271)
+rotation = -0.302675
+
+[node name="lore_paper9" parent="." instance=ExtResource("5_jjmbq")]
+position = Vector2(562, -5954)
+rotation = 0.685361
+
+[node name="LastOne" parent="." instance=ExtResource("4_pyblp")]
+position = Vector2(-152, -6731)
+rotation = -0.302675
+
+[node name="topBorder" type="Area2D" parent="."]
+position = Vector2(6.99994, -324)
+rotation = -3.13981
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topBorder"]
+shape = SubResource("WorldBoundaryShape2D_pyblp")
+
+[node name="rightBorder" type="Area2D" parent="."]
+position = Vector2(581, 0)
+rotation = -1.55937
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightBorder"]
+shape = SubResource("WorldBoundaryShape2D_pyblp")
+
+[node name="leftBorder" type="Area2D" parent="."]
+position = Vector2(-580, 1.00006)
+rotation = -4.71517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftBorder"]
+shape = SubResource("WorldBoundaryShape2D_pyblp")
+
+[node name="BottomBorder2" type="Area2D" parent="."]
+position = Vector2(2.99994, 325)
+rotation = -6.27406
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBorder2"]
+shape = SubResource("WorldBoundaryShape2D_pyblp")
+
+[node name="justdonttouch" parent="." instance=ExtResource("10_jjmbq")]
+position = Vector2(795, 13)
+scale = Vector2(0.637035, 2.70453)
+
+[node name="justdonttouch2" parent="." instance=ExtResource("10_jjmbq")]
+position = Vector2(-800, 43)
+scale = Vector2(0.861773, 5.49521)
+
+[node name="justdonttouch3" parent="." instance=ExtResource("10_jjmbq")]
+position = Vector2(-42, 792)
+scale = Vector2(4.14227, 1)

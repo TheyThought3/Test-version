@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgnkgv6a32u8n"]
+
+[ext_resource type="Texture2D" uid="uid://dn1p1t67rx2gm" path="res://Assets/fam_christmas_invite.png" id="1_djv3c"]
+
+[sub_resource type="GDScript" id="GDScript_djv3c"]
+script/source = "extends Node2D
+
+
+func _on_area_2d_no_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		# Check if the left mouse button was pressed
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(\"Area2D was clicked!\")
+			get_tree().change_scene_to_file(\"res://level_13.tscn\")
+			
+
+
+func _on_area_2d_yes_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		# Check if the left mouse button was pressed
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(\"Area2D was clicked!\")
+			get_node(\"whiteyesblocker\").visible = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djv3c"]
+size = Vector2(373.387, 170.534)
+
+[node name="level_12" type="Node2D"]
+script = SubResource("GDScript_djv3c")
+
+[node name="Area2DNo" type="Area2D" parent="."]
+position = Vector2(573.25, 302.5)
+scale = Vector2(0.948079, 0.873725)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DNo"]
+z_index = 1
+position = Vector2(226.511, 195.714)
+shape = SubResource("RectangleShape2D_djv3c")
+
+[node name="Area2DYes" type="Area2D" parent="."]
+position = Vector2(90, 300)
+scale = Vector2(0.948079, 0.873725)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DYes"]
+z_index = 1
+position = Vector2(226.511, 195.714)
+shape = SubResource("RectangleShape2D_djv3c")
+
+[node name="FamChristmasInvite" type="Sprite2D" parent="."]
+position = Vector2(573.25, 302.5)
+scale = Vector2(0.948079, 0.873725)
+texture = ExtResource("1_djv3c")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.664787, 0.0918977, 0.40973, 1)
+offset_right = 590.0
+offset_bottom = 67.0
+scale = Vector2(1.1446, 1.29281)
+text = "I understand that this is lame but I could not think of anything better okay.
+ Just click the historically acurate one."
+
+[node name="whiteyesblocker" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(-2350, 1849)
+scale = Vector2(4.7097, 3.69415)
+texture = ExtResource("1_djv3c")
+
+[connection signal="input_event" from="Area2DNo" to="." method="_on_area_2d_no_input_event"]
+[connection signal="input_event" from="Area2DYes" to="." method="_on_area_2d_yes_input_event"]

@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs7s6e15gkbxk"]
+
+[ext_resource type="Script" uid="uid://3jtx8kqyq53t" path="res://level_29.gd" id="1_7a4bj"]
+[ext_resource type="Texture2D" uid="uid://b70wl8mlw7vf0" path="res://Assets/LoreDrops/prior.png" id="2_66nok"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="3_x5ecx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66nok"]
+size = Vector2(386, 298)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x5ecx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5ecx"]
+size = Vector2(165, 266)
+
+[node name="level_29" type="Node2D"]
+script = ExtResource("1_7a4bj")
+final_height = 130.0
+
+[node name="Player" parent="." instance=ExtResource("3_x5ecx")]
+position = Vector2(112, 456)
+scale = Vector2(5.5, 5.502)
+
+[node name="Cup" type="ColorRect" parent="."]
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 136.0
+offset_bottom = 184.0
+rotation = 6.28319
+color = Color(0.904991, 0.903284, 0.802355, 1)
+
+[node name="Liquid" type="ColorRect" parent="Cup"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = -120.0
+offset_right = 184.0
+offset_bottom = 20.0
+rotation = 3.14159
+pivot_offset = Vector2(0, 126)
+color = Color(1, 1, 0.513726, 1)
+
+[node name="Cup2" type="ColorRect" parent="Cup"]
+layout_mode = 0
+offset_left = 2.23802e-05
+offset_top = 128.0
+offset_right = 104.0
+offset_bottom = 136.0
+color = Color(0.905882, 0.901961, 0.803922, 1)
+
+[node name="Prior" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 320)
+scale = Vector2(1.62994, 1.39849)
+texture = ExtResource("2_66nok")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(424, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(187, 139)
+shape = SubResource("RectangleShape2D_66nok")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(928, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(8, 80)
+rotation = 3.14159
+scale = Vector2(0.170793, 1.75666)
+shape = SubResource("RectangleShape2D_66nok")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+rotation = 1.57952
+shape = SubResource("WorldBoundaryShape2D_x5ecx")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_x5ecx")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(1152, 104)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_x5ecx")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(1048, 640)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_x5ecx")
+
+[node name="finish line" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish line"]
+position = Vector2(1058.5, 336)
+shape = SubResource("RectangleShape2D_x5ecx")
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+offset_left = 352.0
+offset_top = 48.0
+offset_right = 616.0
+offset_bottom = 120.0
+scale = Vector2(1.93401, 2.05551)
+text = "yep too slow"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 552.0
+offset_right = 506.0
+offset_bottom = 575.0
+scale = Vector2(1.16299, 2.12509)
+text = "Make it home from the walk before the pee timer fills up!"
+
+[connection signal="body_entered" from="finish line" to="." method="_on_finish_line_body_entered"]

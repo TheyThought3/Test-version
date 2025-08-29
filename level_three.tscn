@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://douckb0oj7q12"]
+
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="1_5amml"]
+[ext_resource type="Script" uid="uid://byhrjyhaksyua" path="res://level_three.gd" id="1_cxaom"]
+[ext_resource type="Texture2D" uid="uid://cq58snm4kjaiu" path="res://Assets/Graduation.png" id="2_cxaom"]
+[ext_resource type="PackedScene" uid="uid://dhankrmb81ety" path="res://right_hand.tscn" id="3_ra66b"]
+[ext_resource type="Script" uid="uid://b1r3j7bwm1chx" path="res://left_hand_area_2d.gd" id="5_cxaom"]
+[ext_resource type="Texture2D" uid="uid://tlp54645pfbf" path="res://Assets/RIGHT HAND (PNG).png" id="5_vce38"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wopty"]
+texture = ExtResource("2_cxaom")
+0:44/size_in_atlas = Vector2i(150, 39)
+0:44/0 = 0
+0:0/size_in_atlas = Vector2i(150, 44)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dgghw"]
+sources/2 = SubResource("TileSetAtlasSource_wopty")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co3iu"]
+size = Vector2(6, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slvu4"]
+atlas = ExtResource("5_vce38")
+region = Rect2(0, 0, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyaej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slvu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level three" type="Node2D"]
+script = ExtResource("1_cxaom")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("1_5amml")]
+position = Vector2(118, 28)
+
+[node name="GRADUATION" type="TileMapLayer" parent="."]
+z_index = -5
+use_parent_material = true
+scale = Vector2(0.129567, 0.132128)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 20, 0, 2, 0, 0, 0, 44, 0, 0, 0, 1, 0, 235, 255, 2, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_dgghw")
+rendering_quadrant_size = 100
+
+[node name="RIGHT HAND" parent="." instance=ExtResource("3_ra66b")]
+position = Vector2(94, 15)
+
+[node name="leftHandArea2D" type="Area2D" parent="."]
+position = Vector2(-136, -3)
+script = ExtResource("5_cxaom")
+
+[node name="LeftHandCollisionShape" type="CollisionShape2D" parent="leftHandArea2D"]
+position = Vector2(6, -0.5)
+shape = SubResource("RectangleShape2D_co3iu")
+
+[node name="leftHandAnimation" type="AnimatedSprite2D" parent="leftHandArea2D"]
+position = Vector2(0, -3.8147e-06)
+rotation = 3.14159
+scale = Vector2(0.195232, -0.222429)
+sprite_frames = SubResource("SpriteFrames_gyaej")
+
+[connection signal="body_entered" from="leftHandArea2D" to="." method="_on_left_hand_area_2d_body_entered"]

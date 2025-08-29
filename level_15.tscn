@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwsj15gyrgegh"]
+
+[ext_resource type="Texture2D" uid="uid://b87erkbew6a8u" path="res://IMG_3483.jpg" id="1_7ngvf"]
+[ext_resource type="Texture2D" uid="uid://dnntbmo0dq05x" path="res://Assets/boogie dance floor.png" id="2_ys455"]
+[ext_resource type="PackedScene" uid="uid://bsikduaoo7n2x" path="res://MainCharacter.tscn" id="3_rtln1"]
+
+[sub_resource type="GDScript" id="GDScript_ys455"]
+script/source = "extends Node2D
+var total_score = 0
+@export var player_speed: float = 3.0
+
+func get_player_speed() -> float:
+	return player_speed
+
+
+@onready var countdown_label: Label = $countdown
+@onready var timer_label: Label = $timer
+@onready var dance_floor: Sprite2D = $BoogieDanceFloor
+@onready var exit_area: Area2D = $exit
+
+var countdown_time := 3.0   # countdown starts at 3 seconds
+var game_time := 0.0        # timer for counting up
+var frozen := true          # freeze flag
+var timer_running := false  # true when counting up
+
+func _ready() -> void:
+	# Initial setup
+	dance_floor.visible = false
+	timer_label.text = \"0.00\"
+	countdown_label.text = str(int(countdown_time))
+
+	# connect exit collision
+	exit_area.body_entered.connect(_on_exit_entered)
+
+
+func _process(delta: float) -> void:
+	if frozen:
+		# Countdown logic
+		countdown_time -= delta
+		countdown_label.text = str(clamp(int(ceil(countdown_time)), 0, 3))
+
+		if countdown_time <= 0.0:
+			_start_game()
+	else:
+		# Timer running logic
+		if timer_running:
+			game_time += delta
+			timer_label.text = str(\"%.2f\" % game_time)  # hundredths of seconds
+
+
+func _start_game() -> void:
+	frozen = false
+	countdown_label.visible = false
+	dance_floor.visible = true
+	timer_label.visible = true
+	timer_running = true
+	player_speed = 200
+
+
+func _on_exit_entered(body: Node) -> void:
+	if body.name == \"Player\": # make sure this is your player node name
+		timer_running = false
+		print(\"⏱️ Final time:\", game_time)
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file(\"res://level_16.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys455"]
+size = Vector2(35.2587, 32.9938)
+
+[node name="level_15" type="Node2D"]
+script = SubResource("GDScript_ys455")
+
+[node name="countdown" type="Label" parent="."]
+z_index = 3
+offset_left = -64.0
+offset_top = -389.0
+offset_right = -24.0
+offset_bottom = -366.0
+scale = Vector2(23.9296, 22.2022)
+text = "3"
+
+[node name="timer" type="Label" parent="."]
+visible = false
+z_index = 4
+offset_left = -17.0
+offset_top = -251.0
+offset_right = 23.0
+offset_bottom = -228.0
+scale = Vector2(13.8647, 9.71986)
+text = "0"
+
+[node name="Img3483" type="Sprite2D" parent="."]
+position = Vector2(307, 129)
+texture = ExtResource("1_7ngvf")
+
+[node name="Img3484" type="Sprite2D" parent="."]
+position = Vector2(-300, 132)
+texture = ExtResource("1_7ngvf")
+
+[node name="Img3485" type="Sprite2D" parent="."]
+position = Vector2(918, 140)
+scale = Vector2(0.988327, 1.20943)
+texture = ExtResource("1_7ngvf")
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(810, -319)
+scale = Vector2(9.62837, 3.49624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(1.4782e-05, -4.76837e-06)
+shape = SubResource("RectangleShape2D_ys455")
+
+[node name="BoogieDanceFloor" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(329, 54)
+scale = Vector2(1.12608, 1.28056)
+texture = ExtResource("2_ys455")
+
+[node name="Player" parent="." instance=ExtResource("3_rtln1")]
+z_index = 2
+position = Vector2(-413, 268)
+scale = Vector2(11.0488, 9.6606)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(332, 42)
+scale = Vector2(-4.03644, 1.46903)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -394.0
+offset_top = 88.0
+offset_right = -71.0
+offset_bottom = 111.0
+scale = Vector2(1.77181, 4.68584)
+text = "Leave the school dance as fast as possible"

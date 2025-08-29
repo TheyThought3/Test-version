@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bll4du1tedn70"]
+
+[ext_resource type="Texture2D" uid="uid://cbcc4efi4icmb" path="res://Assets/pakenham river.png" id="1_ve6sx"]
+
+[sub_resource type="GDScript" id="GDScript_ve6sx"]
+script/source = "extends Node2D
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		# Check if the left mouse button was pressed
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(\"Area2D was clicked!\")
+			get_tree().change_scene_to_file(\"res://level_12.tscn\")
+			
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ve6sx"]
+radius = 37.0
+height = 124.0
+
+[node name="level_11" type="Node2D"]
+script = SubResource("GDScript_ve6sx")
+
+[node name="PakenhamRiver" type="Sprite2D" parent="."]
+position = Vector2(-1, 8)
+texture = ExtResource("1_ve6sx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-253, 73)
+shape = SubResource("CapsuleShape2D_ve6sx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Click on the most dangerous part
+of the pakenham river part"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

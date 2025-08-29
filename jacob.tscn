@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxr43fcsmab6f"]
+
+[ext_resource type="Texture2D" uid="uid://bl7y3bafixvyn" path="res://Assets/Jacob hitting head.png" id="1_qwv7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pkvt"]
+atlas = ExtResource("1_qwv7t")
+region = Rect2(0, 0, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcprx"]
+atlas = ExtResource("1_qwv7t")
+region = Rect2(16, 0, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7xsm"]
+atlas = ExtResource("1_qwv7t")
+region = Rect2(32, 0, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwv7t"]
+atlas = ExtResource("1_qwv7t")
+region = Rect2(0, 0, 16, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msm6m"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0pkvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcprx")
+}, {
+"duration": 3.9,
+"texture": SubResource("AtlasTexture_j7xsm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_qwv7t")
+}],
+"loop": false,
+"name": &"BAM",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwv7t"]
+size = Vector2(7, 7)
+
+[node name="jacob" type="StaticBody2D"]
+
+[node name="Bam_animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_msm6m")
+animation = &"BAM"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_qwv7t")

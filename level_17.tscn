@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://1k6kqs3mkint"]
+
+[ext_resource type="Texture2D" uid="uid://cqr1dr1crxj3v" path="res://Assets/fairis wheel/fair.png" id="1_5cbs2"]
+[ext_resource type="Script" uid="uid://bhmd2616hwbiw" path="res://level_17.gd" id="1_ux4ow"]
+[ext_resource type="Texture2D" uid="uid://dvn7u52xmrhv0" path="res://Assets/fairis wheel/Farris WHEEL.png" id="1_ys5ji"]
+[ext_resource type="Script" uid="uid://cbp4kq27fxc7u" path="res://wheel.gd" id="2_bmt82"]
+[ext_resource type="Texture2D" uid="uid://cixh1cseebq53" path="res://Assets/fairis wheel/ferris base.png" id="2_x7j8j"]
+[ext_resource type="Texture2D" uid="uid://do2ga2bc3wkaa" path="res://Assets/fairis wheel/ferris our cart.png" id="4_x7j8j"]
+[ext_resource type="Script" uid="uid://b84jq4tgtys01" path="res://carpoint_1.gd" id="5_0y6gu"]
+[ext_resource type="Texture2D" uid="uid://cdfgv84nllnpo" path="res://Assets/fairis wheel/ferris cart.png" id="5_74rdr"]
+[ext_resource type="Script" uid="uid://d2jjclaflvnmf" path="res://car_sprite_1.gd" id="6_o1uqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74rdr"]
+size = Vector2(250, 698)
+
+[node name="level_17" type="Node2D"]
+script = ExtResource("1_ux4ow")
+
+[node name="Wheelanimation" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.815307, 0.816095)
+texture = ExtResource("1_ys5ji")
+script = ExtResource("2_bmt82")
+
+[node name="Carpoint1" type="Node2D" parent="Wheelanimation"]
+position = Vector2(0, -274.478)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="FerrisCart" type="Sprite2D" parent="Wheelanimation/Carpoint1"]
+position = Vector2(4.97624e-05, 48)
+scale = Vector2(0.45977, 0.396338)
+texture = ExtResource("5_74rdr")
+
+[node name="Carpoint2" type="Node2D" parent="Wheelanimation"]
+position = Vector2(235.494, -137.239)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="CarSprite1" type="Sprite2D" parent="Wheelanimation/Carpoint2"]
+position = Vector2(0.00012207, 48)
+scale = Vector2(0.434773, 0.36791)
+texture = ExtResource("4_x7j8j")
+script = ExtResource("6_o1uqt")
+
+[node name="Carpoint3" type="Node2D" parent="Wheelanimation"]
+position = Vector2(-235.494, -137.239)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="CarSprite1" type="Sprite2D" parent="Wheelanimation/Carpoint3"]
+position = Vector2(0.00012207, 48)
+scale = Vector2(0.434773, 0.36791)
+texture = ExtResource("4_x7j8j")
+script = ExtResource("6_o1uqt")
+
+[node name="Carpoint4" type="Node2D" parent="Wheelanimation"]
+position = Vector2(-255.119, 127.436)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="CarSprite1" type="Sprite2D" parent="Wheelanimation/Carpoint4"]
+position = Vector2(0.00012207, 48)
+scale = Vector2(0.434773, 0.36791)
+texture = ExtResource("4_x7j8j")
+script = ExtResource("6_o1uqt")
+
+[node name="Carpoint5" type="Node2D" parent="Wheelanimation"]
+position = Vector2(245.306, 127.436)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="CarSprite1" type="Sprite2D" parent="Wheelanimation/Carpoint5"]
+position = Vector2(0.00012207, 48)
+scale = Vector2(0.434773, 0.36791)
+texture = ExtResource("4_x7j8j")
+script = ExtResource("6_o1uqt")
+
+[node name="Carpoint6" type="Node2D" parent="Wheelanimation"]
+position = Vector2(0, 264.675)
+scale = Vector2(1.22653, 1.22535)
+script = ExtResource("5_0y6gu")
+
+[node name="CarSprite1" type="Sprite2D" parent="Wheelanimation/Carpoint6"]
+position = Vector2(0.00012207, 48)
+scale = Vector2(0.434773, 0.36791)
+texture = ExtResource("4_x7j8j")
+script = ExtResource("6_o1uqt")
+
+[node name="Fair" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-8, 32)
+scale = Vector2(1.41741, 1.38479)
+texture = ExtResource("1_5cbs2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(451, 27)
+shape = SubResource("RectangleShape2D_74rdr")
+
+[node name="FerrisBase" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-16, 24)
+scale = Vector2(1.38015, 1.57653)
+texture = ExtResource("2_x7j8j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 56)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -552.0
+offset_top = -240.0
+offset_right = -364.0
+offset_bottom = -191.0
+text = "Click F to move and stop
+Click left to move on"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

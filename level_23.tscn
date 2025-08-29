@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://i8iklplk66cr"]
+
+[ext_resource type="Texture2D" uid="uid://b55wm5guym86d" path="res://16px/noir.png" id="1_xnovo"]
+[ext_resource type="Script" uid="uid://cl1474an3kogp" path="res://level_23.gd" id="1_xnykc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnovo"]
+size = Vector2(216, 128)
+
+[node name="level_23" type="Node2D"]
+script = ExtResource("1_xnykc")
+
+[node name="Noir" type="Sprite2D" parent="."]
+position = Vector2(576.75, 322.25)
+scale = Vector2(1.24378, 1.1175)
+texture = ExtResource("1_xnovo")
+
+[node name="what to do" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(1.19741, 1.33498)
+text = "tent is your move on"
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(876, 280)
+shape = SubResource("RectangleShape2D_xnovo")
+
+[connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]

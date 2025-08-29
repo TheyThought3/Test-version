@@ -1,0 +1,191 @@
+[gd_scene load_steps=14 format=3 uid="uid://ciiy1xr4bbrgd"]
+
+[ext_resource type="Script" uid="uid://cbuu6qeixijur" path="res://level_22.gd" id="1_laqjg"]
+[ext_resource type="Texture2D" uid="uid://bu36j5fqvue60" path="res://Assets/skiing stuff/ski Hill.png" id="1_xi250"]
+[ext_resource type="Texture2D" uid="uid://c6ej1rfkx0sdj" path="res://Assets/skiing stuff/Jump1.png" id="2_yeci1"]
+[ext_resource type="Texture2D" uid="uid://dyt5et716mmms" path="res://Assets/skiing stuff/jump3.png" id="3_lmde5"]
+[ext_resource type="Texture2D" uid="uid://er8qg0urqw54" path="res://Assets/skiing stuff/jump2.png" id="4_laqjg"]
+[ext_resource type="Script" uid="uid://c6xqpp33gixxq" path="res://skiern.gd" id="5_laqjg"]
+[ext_resource type="Texture2D" uid="uid://lgx4foj0rqtk" path="res://Assets/ava skiing.png" id="5_yeci1"]
+[ext_resource type="Texture2D" uid="uid://bm86euuatiuhh" path="res://Assets/skiing stuff/Erik Skiing.png" id="8_eer6t"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eer6t"]
+a = Vector2(204.147, 7.62939e-06)
+b = Vector2(-249.513, 7.62939e-06)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ocb37"]
+a = Vector2(34.0244, 0)
+b = Vector2(215.488, -137.848)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uj8dn"]
+a = Vector2(34.0245, 0)
+b = Vector2(204.147, -42.4148)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xi250"]
+a = Vector2(-584, -272)
+b = Vector2(-192, 96)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmde5"]
+radius = 107.647
+height = 215.295
+
+[node name="level_22" type="Node2D"]
+script = ExtResource("1_laqjg")
+
+[node name="SkiHillBkgrnd" type="Sprite2D" parent="."]
+position = Vector2(-4.02755, 23.9908)
+rotation = -0.000459678
+scale = Vector2(1.24361, 1.20079)
+texture = ExtResource("1_xi250")
+
+[node name="Jump1" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-71.9999, 56)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump1s2d" type="Sprite2D" parent="Jump1"]
+position = Vector2(-16, 72)
+texture = ExtResource("2_yeci1")
+
+[node name="Jump1cs2d" type="CollisionShape2D" parent="Jump1"]
+shape = SubResource("SegmentShape2D_eer6t")
+disabled = true
+
+[node name="Jump3" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-416, 56)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump3s2d" type="Sprite2D" parent="Jump3"]
+position = Vector2(476.343, 10.6037)
+texture = ExtResource("3_lmde5")
+
+[node name="Jump3cs2d2" type="CollisionShape2D" parent="Jump3"]
+position = Vector2(476.343, 0)
+shape = SubResource("SegmentShape2D_ocb37")
+disabled = true
+
+[node name="Jump3cs2d" type="CollisionShape2D" parent="Jump3"]
+position = Vector2(476.343, 0)
+shape = SubResource("SegmentShape2D_eer6t")
+disabled = true
+
+[node name="Jump2" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(-80, 64)
+scale = Vector2(0.705375, 0.754454)
+
+[node name="Jump2s2d" type="Sprite2D" parent="Jump2"]
+position = Vector2(6.10352e-05, 53.0185)
+texture = ExtResource("4_laqjg")
+
+[node name="Jump2cs2d2" type="CollisionShape2D" parent="Jump2"]
+position = Vector2(11.3416, -10.6037)
+shape = SubResource("SegmentShape2D_uj8dn")
+disabled = true
+
+[node name="Jump2cs2d" type="CollisionShape2D" parent="Jump2"]
+position = Vector2(11.3416, -10.6037)
+shape = SubResource("SegmentShape2D_eer6t")
+disabled = true
+
+[node name="worldBoundry" type="StaticBody2D" parent="."]
+
+[node name="worldBoundrycs" type="CollisionShape2D" parent="worldBoundry"]
+shape = SubResource("SegmentShape2D_xi250")
+
+[node name="skiern" type="CharacterBody2D" parent="."]
+position = Vector2(-488, -320)
+rotation = 0.0999409
+scale = Vector2(0.540234, 0.469659)
+script = ExtResource("5_laqjg")
+
+[node name="skier sprite" type="Sprite2D" parent="skiern"]
+texture = ExtResource("5_yeci1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="skiern"]
+position = Vector2(-2.09808e-05, 1.71661e-05)
+shape = SubResource("CapsuleShape2D_lmde5")
+
+[node name="RayCast2D" type="RayCast2D" parent="skiern"]
+target_position = Vector2(0.848145, 48.1685)
+
+[node name="skier sprite2" type="Sprite2D" parent="skiern"]
+visible = false
+position = Vector2(-14.7345, 1.69952)
+rotation = -0.0616834
+texture = ExtResource("8_eer6t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Jump1But" type="Button" parent="."]
+offset_left = -272.0
+offset_top = 184.0
+offset_right = -210.0
+offset_bottom = 215.0
+text = "Jump 1"
+
+[node name="Jump2But" type="Button" parent="."]
+offset_left = -200.0
+offset_top = 184.0
+offset_right = -138.0
+offset_bottom = 215.0
+text = "Jump 2"
+
+[node name="Jump3But" type="Button" parent="."]
+offset_left = -120.0
+offset_top = 184.0
+offset_right = -58.0
+offset_bottom = 215.0
+text = "Jump 3"
+
+[node name="Reset" type="Button" parent="."]
+offset_left = -272.0
+offset_top = 240.0
+offset_right = -221.0
+offset_bottom = 271.0
+text = "Reset"
+
+[node name="switch" type="Button" parent="."]
+offset_left = -216.0
+offset_top = 240.0
+offset_right = -158.0
+offset_bottom = 271.0
+text = "switch"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.388235, 0.0784314, 0.568627, 1)
+offset_left = 312.0
+offset_top = 168.0
+offset_right = 573.0
+offset_bottom = 321.0
+text = "Sometimes you have to wiggle it
+ (right now it is on jump three)
+ I love it so much but there comes
+ a point where it is not worth it
+ (for me) to try and fix it ¨\\('_')/¨
+ (proud of that guy hehe)"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 200.0
+offset_top = -304.0
+offset_right = 560.0
+offset_bottom = -203.0
+text = "Left and Right arrows to pivot the character
+The buttons are self explanitory
+I tried to make an Erik and Ava,
+ but everyone looks the same as a stick person"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = -272.0
+offset_top = 288.0
+offset_right = -140.0
+offset_bottom = 319.0
+text = "Move on Button"
+
+[connection signal="pressed" from="Jump1But" to="." method="_on_jump_1_but_pressed"]
+[connection signal="pressed" from="Jump2But" to="." method="_on_jump_2_but_pressed"]
+[connection signal="pressed" from="Jump3But" to="." method="_on_jump_3_but_pressed"]
+[connection signal="pressed" from="Reset" to="skiern" method="_on_reset_pressed"]
+[connection signal="pressed" from="switch" to="." method="_on_switch_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

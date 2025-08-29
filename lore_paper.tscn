@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq3w815b8mbs"]
+
+[ext_resource type="Texture2D" uid="uid://bp1gshfj80mt7" path="res://Assets/LoreDrops/Lore_(paper).png" id="1_krx7g"]
+
+[sub_resource type="GDScript" id="GDScript_krx7g"]
+script/source = "extends Area2D
+
+@export var fall_speed: float = 100.0
+
+func _ready() -> void:
+	# Ensure we are monitoring and connect for CharacterBody2D collisions
+	monitoring = true
+	monitorable = true
+	body_entered.connect(_on_body_entered)
+
+	# Debug:
+	print(\"[Shape] Ready:\", name, \" layer=\", collision_layer, \" mask=\", collision_mask)
+
+func _process(delta: float) -> void:
+	global_position.y += fall_speed * delta
+	if global_position.y > 325:
+		queue_free()
+
+func _on_body_entered(body: Node) -> void:
+	# Debug:
+	print(\"[Shape] body_entered:\", body.name, \" groups=\", body.get_groups())
+
+	if body.is_in_group(\"player\"):
+		_notify_main_and_free(body)
+
+func _notify_main_and_free(player: Node) -> void:
+	# Walk up to find the main Node2D with a handler
+	var node := get_parent()
+	while node and not node.has_method(\"on_shape_collected\"):
+		node = node.get_parent()
+
+	if node:
+		node.on_shape_collected(self, player)
+		print(\"[Shape] Notified main:\", node.name)
+	else:
+		push_warning(\"[Shape] No on_shape_collected() found up the tree\")
+
+	queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fos0n"]
+size = Vector2(128, 200)
+
+[node name="lore_paper" type="Area2D"]
+script = SubResource("GDScript_krx7g")
+
+[node name="Lore(paper)" type="Sprite2D" parent="."]
+position = Vector2(64, -8)
+texture = ExtResource("1_krx7g")
+
+[node name="CollisionShape2DPaper" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_fos0n")

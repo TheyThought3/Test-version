@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn2o1cptw5ou5"]
+
+[ext_resource type="Script" uid="uid://cke07ia2kbxh7" path="res://level_21.gd" id="1_8htv5"]
+[ext_resource type="Texture2D" uid="uid://ec8ifeyyxv5o" path="res://Assets/fairis wheel/IMG_6703.JPG" id="1_t36ia"]
+[ext_resource type="Texture2D" uid="uid://ccfdowsuvcnut" path="res://Assets/fairis wheel/IMG_6690.jpg" id="2_8htv5"]
+[ext_resource type="Texture2D" uid="uid://30mlp05minw4" path="res://Assets/fairis wheel/IMG_6697.jpg" id="3_yrars"]
+[ext_resource type="PackedScene" uid="uid://r48u7q886olr" path="res://cookie.tscn" id="5_yrars"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrars"]
+size = Vector2(882, 1354)
+
+[node name="level_21" type="Node2D"]
+script = ExtResource("1_8htv5")
+
+[node name="Img6703" type="Sprite2D" parent="."]
+position = Vector2(-794, 11.75)
+scale = Vector2(1.19344, 1.20968)
+texture = ExtResource("1_t36ia")
+metadata/_edit_lock_ = true
+
+[node name="Img6690" type="Sprite2D" parent="."]
+position = Vector2(30, 4)
+scale = Vector2(1.15018, 1.23387)
+texture = ExtResource("2_8htv5")
+metadata/_edit_lock_ = true
+
+[node name="Img6697" type="Sprite2D" parent="."]
+position = Vector2(772, -9.75)
+scale = Vector2(1.13514, 1.25576)
+texture = ExtResource("3_yrars")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="cookie" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-1351, 204)
+
+[node name="cookie2" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-489, -58)
+
+[node name="cookie3" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-785, -184)
+
+[node name="cookie4" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(267, -74)
+rotation = 2.54082
+scale = Vector2(2.00647, 1.95668)
+
+[node name="cookie5" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(115, -730)
+rotation = 0.506468
+scale = Vector2(-2.46128, 2.49254)
+
+[node name="cookie6" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-284, -476)
+
+[node name="cookie7" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-508, -324)
+
+[node name="cookie8" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-1191, -188)
+
+[node name="cookie9" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-1176, -1957)
+scale = Vector2(5.86539, 5.33912)
+
+[node name="cookie10" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-925, -541)
+scale = Vector2(3.46315, 3.26646)
+
+[node name="cookie11" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-1021, 135)
+
+[node name="cookie12" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-683, 86)
+
+[node name="cookie13" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(-572, -769)
+
+[node name="cookie14" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(624, 86)
+
+[node name="cookie15" parent="." groups=["cookies"] instance=ExtResource("5_yrars")]
+position = Vector2(373, 135)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1118.0
+offset_top = -543.0
+offset_right = -745.0
+offset_bottom = -520.0
+scale = Vector2(1.91889, 4.51752)
+text = "This was one of my favrite days of life. Eng exam"
+
+[node name="instructions" type="Label" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = -628.0
+offset_right = 536.0
+offset_bottom = -605.0
+scale = Vector2(4.43382, 4.25287)
+text = "Click on the twerps!"
+
+[node name="moveoner" type="Area2D" parent="."]
+visible = false
+
+[node name="moveonercs2d" type="CollisionShape2D" parent="moveoner"]
+position = Vector2(785, -18)
+shape = SubResource("RectangleShape2D_yrars")
+
+[connection signal="input_event" from="moveoner" to="." method="_on_area_2d_input_event"]
