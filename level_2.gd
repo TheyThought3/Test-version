@@ -2,6 +2,7 @@ extends Node2D
 
 var total_score = 0
 @export var player_speed: float = 50.0
+@onready var toggle_label : Label = $"Label"
 
 func get_player_speed() -> float:
 	return player_speed
@@ -23,7 +24,9 @@ func load_next_scene():
 func _process(delta):
 	var bookOnex_pos = $"flying books".position.x
 	var secret_tile_visible = get_node("secret0tile").visible
-	
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
+
 	if secret_tile_visible and bookOnex_pos > 33 and bookOnex_pos < 75:
 		$"flying books".visible = false
 	

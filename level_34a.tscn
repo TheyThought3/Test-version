@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdoqdkfvkfbqp"]
+
+[ext_resource type="Script" uid="uid://ct5em3qewytrj" path="res://level_34a.gd" id="1_86obd"]
+[ext_resource type="Texture2D" uid="uid://cbd50j8um8o0" path="res://Assets/message/the end.png" id="1_x64t0"]
+[ext_resource type="Texture2D" uid="uid://bv4l8d5mxl3ue" path="res://Assets/LoreDrops/golf ball.png" id="2_86obd"]
+[ext_resource type="Texture2D" uid="uid://b3lj8t88likvi" path="res://Assets/LoreDrops/Lore_(star).png" id="3_aqvaw"]
+[ext_resource type="Texture2D" uid="uid://u2vs5f3umryc" path="res://Assets/insutruments/Chello.png" id="4_itbcg"]
+[ext_resource type="Texture2D" uid="uid://do2ga2bc3wkaa" path="res://Assets/fairis wheel/ferris our cart.png" id="5_7b8s2"]
+[ext_resource type="Texture2D" uid="uid://q7wnynm4e6r0" path="res://Assets/fairis wheel/cookie.png" id="6_gxm3r"]
+
+[node name="level_34a" type="Node2D"]
+script = ExtResource("1_86obd")
+
+[node name="TheEnd" type="Sprite2D" parent="."]
+position = Vector2(64, 176)
+scale = Vector2(3.23305, 2.08963)
+texture = ExtResource("1_x64t0")
+metadata/_edit_lock_ = true
+
+[node name="GolfBall" type="Sprite2D" parent="."]
+position = Vector2(1104, 584)
+scale = Vector2(0.132, 0.132)
+texture = ExtResource("2_86obd")
+
+[node name="Lore(star)" type="Sprite2D" parent="."]
+position = Vector2(1056, 152)
+scale = Vector2(0.66092, 0.70155)
+texture = ExtResource("3_aqvaw")
+
+[node name="Chello" type="Sprite2D" parent="."]
+position = Vector2(87.5, 488)
+scale = Vector2(0.61, 0.612)
+texture = ExtResource("4_itbcg")
+
+[node name="FerrisOurCart" type="Sprite2D" parent="."]
+position = Vector2(88, 120)
+scale = Vector2(0.706897, 0.755319)
+texture = ExtResource("5_7b8s2")
+
+[node name="Cookie" type="Sprite2D" parent="."]
+position = Vector2(1048, 352)
+scale = Vector2(0.431034, 0.471631)
+texture = ExtResource("6_gxm3r")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 296.0
+offset_top = 8.0
+offset_right = 1477.0
+offset_bottom = 577.0
+text = "My big big plan was to end it with my actual favourite thing about you. 
+I realized it was never something I had thought of. I pondered and pondered,
+until I gave up to be completely honest. There is not one thing that stands 
+out above the rest. While thinking, I came up with the thought of solving by 
+finding the inverse. What is my least favourite thing about you. That was 
+another rabit hole, but in  the end I figured it out. My least favourite thing
+ about you is that I could loose you. Kind of a cheap out awnser, but it is true.
+ I am sorry for often worrying, but I can not help it, rational or  not. 
+In conclusion I will still say my favourite thing about you is your water bottle, 
+not becuase it is true, but becuase I think it is funny.
+---------------------------------------------------------------------------------------------------------------
+I had so so so so much fun making this, sometimes if I had something that 
+really really excited me I would lock in until I solved it. For example on
+the skiing one witht the three jumps. I started that scene at 10:30 with the
+plan to maybe think of an idea then maybe do the assets. Next thing I 
+knew I felt my stomach grumble just as it finally worked, checked my 
+watch and realized it was 3:00... oops. 
+
+Thank you so so so much for the best year of my life. 
+To many many more...
+Happy first year Ava! 
+I love you more then you could imagine : )
+"

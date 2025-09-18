@@ -19,7 +19,7 @@ func _on_submit_button_pressed():
 		print("Correct awnser! Access granted.")
 		message_label.text = "Access Granted!"
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://level_20.tscn")
+		get_tree().change_scene_to_file("res://level_27.tscn")
 		# Add code here to proceed to the next part of the game.
 	else:
 		print("Incorrect awnser. Try again.")

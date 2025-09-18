@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1w6y7m7rqyyt"
+path="res://.godot/imported/John Williams Schindler´s List Theme - Itzhak Perlman.mp3-3aa2c5be51e121b4cdb47e901372ad6a.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/John Williams Schindler´s List Theme - Itzhak Perlman.mp3"
+dest_files=["res://.godot/imported/John Williams Schindler´s List Theme - Itzhak Perlman.mp3-3aa2c5be51e121b4cdb47e901372ad6a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

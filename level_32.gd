@@ -19,8 +19,6 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _input(event: InputEvent) -> void:
@@ -43,7 +41,7 @@ func _input(event: InputEvent) -> void:
 		if click_counter ==8:
 			image8.visible = true
 		if click_counter == 9:
-			get_tree().change_scene_to_file("res://level_33.tscn")
+			get_tree().change_scene_to_file("res://level_16.tscn")
 
 
 		click_counter += 1

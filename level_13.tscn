@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfni2qd8154ap"]
+[gd_scene load_steps=6 format=3 uid="uid://cfni2qd8154ap"]
 
 [ext_resource type="Texture2D" uid="uid://cr08vuoh83451" path="res://Assets/SEAP canoeing.png" id="1_7hhq0"]
+[ext_resource type="Script" uid="uid://dp665xvyu53hj" path="res://level_13.gd" id="1_w0c62"]
 [ext_resource type="Texture2D" uid="uid://bwe51mffc287o" path="res://Assets/canoe.png" id="2_hj8db"]
 
 [sub_resource type="GDScript" id="GDScript_hj8db"]
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 size = Vector2(175.952, 48)
 
 [node name="level_13" type="Node2D"]
+script = ExtResource("1_w0c62")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(52, 50)
@@ -92,3 +94,12 @@ shape = SubResource("RectangleShape2D_w0c62")
 position = Vector2(-332, 24)
 scale = Vector2(0.525123, 0.435022)
 texture = ExtResource("2_hj8db")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -362.0
+offset_top = -293.0
+offset_right = -322.0
+offset_bottom = -270.0
+scale = Vector2(1.19408, 1.65071)
+text = "Ok maybe I get 2 digs, but its more of a self defence!"

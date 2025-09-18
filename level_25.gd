@@ -1,5 +1,4 @@
 extends Node2D
-
 @onready var warning: Label = $tsk
 @onready var timer: Timer = $mtimer
 @onready var toggle: Sprite2D = $Awake
@@ -7,7 +6,7 @@ extends Node2D
 @onready var pointc: Label = $points # points label
 var points = 0
 var rng = RandomNumberGenerator.new()
-
+@onready var toggle_label : Label = $"Label"
 func _ready() -> void:
 	rng.randomize()
 	timer.wait_time = rng.randf_range(1.0, 5.0)
@@ -37,9 +36,13 @@ func _on_timer_timeout():
 	else:
 		# This is where the player failed to click in time.
 		fail.visible = true
-		await get_tree().create_timer(2.5).timeout
+		await get_tree().create_timer(0.2).timeout
 		get_tree().change_scene_to_file("res://level_25.tcsn")
 
 
 func update_points_display():
 	pointc.text = str(points) + "/20"
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible

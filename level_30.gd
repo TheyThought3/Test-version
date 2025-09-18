@@ -37,7 +37,9 @@ func _on_box_4_body_entered(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if checker > 3:
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://level_31.tscn")
+		get_tree().change_scene_to_file("res://level_28.tscn")
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 
 func _on_box_3_body_entered(body: Node2D) -> void:
@@ -46,3 +48,4 @@ func _on_box_3_body_entered(body: Node2D) -> void:
 		checker+=1
 		checker3 = 1
 	
+@onready var toggle_label : Label = $"Label"

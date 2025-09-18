@@ -110,11 +110,20 @@ texture = ExtResource("2_x7j8j")
 position = Vector2(0, 56)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -552.0
 offset_top = -240.0
 offset_right = -364.0
 offset_bottom = -191.0
 text = "Click F to move and stop
-Click left to move on"
+Click left to move on
+Olivia and Jayden had talked to 
+me about this big plan to do on
+this wheel, I obvously said pfft 
+no, retrospectivly, it would 
+have been silly to see me try
+and exicute what they had 
+planned... What did happen
+felt magical at the time."
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

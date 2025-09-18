@@ -123,3 +123,13 @@ offset_right = 227.0
 offset_bottom = -36.0
 scale = Vector2(0.467682, 0.760719)
 text = "You'd better be able to figure this out"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = 34.0
+offset_right = 133.0
+offset_bottom = 83.0
+scale = Vector2(0.494559, 0.526811)
+text = "This grad shakeroo was a very 
+interesting coincidence"

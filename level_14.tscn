@@ -4,6 +4,11 @@
 
 [sub_resource type="GDScript" id="GDScript_8ljv5"]
 script/source = "extends Node2D
+@onready var toggle_label : Label = $\"Label2\"
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"toggle\"):
+		toggle_label.visible = !toggle_label.visible
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -11,7 +16,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		# Check if the left mouse button was pressed
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print(\"Area2D was clicked!\")
-			get_tree().change_scene_to_file(\"res://level_15.tscn\")
+			get_tree().change_scene_to_file(\"res://level_19.tscn\")
 			
 "
 
@@ -44,5 +49,15 @@ offset_right = 571.0
 offset_bottom = 37.0
 scale = Vector2(1.23043, 1.73257)
 text = "idontknowwhatimdoinghelpme.github.io/Is-Erik-Gay/"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color(0.713726, 0.239216, 0.0784314, 1)
+offset_left = 201.0
+offset_top = 92.0
+offset_right = 411.0
+offset_bottom = 115.0
+scale = Vector2(1.10713, 1.22451)
+text = "I enjoy looking back at this "
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

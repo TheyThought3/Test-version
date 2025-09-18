@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c76l0yb6g7bli"]
+[gd_scene load_steps=3 format=3 uid="uid://c76l0yb6g7bli"]
 
+[ext_resource type="Script" uid="uid://b1pgf6qxvlxlw" path="res://level_19.gd" id="1_bosnc"]
 [ext_resource type="Script" uid="uid://rua26xhjrfe2" path="res://canvas_layer.gd" id="1_nnks6"]
 
 [node name="level_19" type="Node2D"]
+script = ExtResource("1_bosnc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_nnks6")
@@ -45,3 +47,12 @@ offset_top = 16.0
 offset_right = 1046.0
 offset_bottom = 39.0
 text = "(oh why didnt you let me write it by hand, you may be asking. Becuase i'm not making a neurall network. (looked into it))"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 82.0
+offset_top = 478.0
+offset_right = 807.0
+offset_bottom = 501.0
+scale = Vector2(1.24543, 1.42446)
+text = "Math Homework became my favroute part of days, the math was mid... the person was better"

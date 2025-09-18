@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var toggle_label : Label = $"Label2"
 @export var player_speed: float = 300.0
 
 func get_player_speed() -> float:
@@ -42,13 +42,18 @@ func _check_match():
 
 		if matched_count == total_pairs:
 			print("🎉 All pairs matched!")
-			get_tree().change_scene_to_file("res://level_19.tscn")
+			get_tree().change_scene_to_file("res://level_22.tscn")
 	else:
 		print("❌ Not a match, flipping back")
 		await get_tree().create_timer(0.7).timeout
 		egg1.flip_down()
 		egg2.flip_down()
 		flipped_eggs.clear()
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 
 func _get_pair_name(node_name: String) -> String:

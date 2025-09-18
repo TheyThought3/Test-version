@@ -39,7 +39,7 @@ func _on_item_clicked(item_type, item_id, area_2d_node):
 			if matches_found == 5:
 				print("All pairs have been matched! You win!")
 				await get_tree().create_timer(0.5).timeout
-				get_tree().change_scene_to_file("res://level_29.tscn")
+				get_tree().change_scene_to_file("res://level_28b.tscn")
 		else:
 			print("--- No match. ---")
 		

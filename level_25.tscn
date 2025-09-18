@@ -64,4 +64,27 @@ position = Vector2(224, 152)
 scale = Vector2(1.71212, 1.74567)
 texture = ExtResource("4_vsjbg")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = 88.0
+offset_right = 768.0
+offset_bottom = 475.0
+scale = Vector2(0.682628, 0.549346)
+text = "start of an era... I 
+had on my list of
+ notable things 
+was the first time
+ I fell asleep on 
+call. It felt important
+ for some reason...
+not fully sure why.
+ It was the start of 
+an era. And let me 
+tell you, there is 
+nothing I love more 
+then waking up
+ and looking up
+ and seeing you! "
+
 [connection signal="timeout" from="mtimer" to="." method="_on_timer_timeout"]

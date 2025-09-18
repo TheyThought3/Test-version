@@ -1,6 +1,6 @@
 extends Node2D
 @export var player_speed: float = 50.0
-
+@onready var toggle_label : Label = $"Label3"
 func get_player_speed() -> float:
 	return player_speed
 
@@ -23,6 +23,10 @@ var input_locked: bool = false
 ]
 
 @onready var backspace_button = $BackspaceButton
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 func _ready():
 	for i in buttons.size():
@@ -47,7 +51,7 @@ func _on_button_pressed(number: String):
 		if input == password:
 			$Label.text = "Access Granted!"
 			await get_tree().create_timer(1.0).timeout
-			get_tree().change_scene_to_file("res://level_5.tscn")
+			get_tree().change_scene_to_file("res://level_7.tscn")
 		else:
 			$Label.text = "Wrong Code!"
 			await get_tree().create_timer(1.0).timeout

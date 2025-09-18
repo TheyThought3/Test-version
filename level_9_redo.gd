@@ -8,6 +8,11 @@ var flipped_eggs: Array = []
 var matched_count: int = 0
 @export var total_pairs: int = 5   # you can update this depending on your level size
 
+@onready var toggle_label : Label = $"Label2"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
+
 
 func flip_egg(egg: Area2D) -> void:
 	if flipped_eggs.size() >= 2:
@@ -41,7 +46,7 @@ func _check_match():
 
 		if matched_count == total_pairs:
 			print("🎉 All pairs matched!")
-			get_tree().change_scene_to_file("res://level_10.tscn")
+			get_tree().change_scene_to_file("res://level_11.tscn")
 	else:
 		print("❌ Not a match, flipping back")
 		await get_tree().create_timer(0.7).timeout

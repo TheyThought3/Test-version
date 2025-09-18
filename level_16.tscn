@@ -38,5 +38,22 @@ position = Vector2(184, 288)
 scale = Vector2(-1.27277, 1.38934)
 texture = ExtResource("3_1j2m5")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(0.991369, 0.67702, 0.672817, 1)
+offset_left = 264.0
+offset_top = -168.0
+offset_right = 522.0
+offset_bottom = 63.0
+text = "To what, I forgot to write...
+Later when we were handing out 
+and Barb came over asking
+\"Is that your girlfriend\" 
+It was the first time I had 
+vocalized it... It still sits like
+lead in my throught idk why
+I just say Gal Pal now, 
+its a work in progress"
+
 [connection signal="input_event" from="Area2Dyes" to="." method="_on_area_2_dyes_input_event"]
 [connection signal="input_event" from="Area2Dno" to="." method="_on_area_2_dno_input_event"]

@@ -35,7 +35,10 @@ scale = Vector2(1.41607, 1.52429)
 text = "I pondered and pondered on what to do for this. 
 This was the second last one that I did.
 I still don't know about it.
-Right side moves on"
+Right side moves on
+My most anticipated day of life
+And she still isn't my facebook friend
+(the one jab I am allowing myself)"
 
 [node name="Mom1" type="Sprite2D" parent="."]
 visible = false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m0k5i8l1w7fj"
+path="res://.godot/imported/Who I'd Be (Brian d'Arcy James)  Shrek The Musical  TUNE.mp3-b9b8f5277fc239f5ae9814fc3a6d60c8.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/Who I'd Be (Brian d'Arcy James)  Shrek The Musical  TUNE.mp3"
+dest_files=["res://.godot/imported/Who I'd Be (Brian d'Arcy James)  Shrek The Musical  TUNE.mp3-b9b8f5277fc239f5ae9814fc3a6d60c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

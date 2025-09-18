@@ -26,4 +26,14 @@ text = "tent is your move on"
 position = Vector2(876, 280)
 shape = SubResource("RectangleShape2D_xnovo")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 16.0
+offset_top = 440.0
+offset_right = 769.0
+offset_bottom = 489.0
+text = "I feel that I can only push through and be happy for a certian amount of time, its probably normal
+Our quickish little chats at night made my trip, I would have been a crash out waiting to happen"
+
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]

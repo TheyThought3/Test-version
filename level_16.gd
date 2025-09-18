@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var toggle_label : Label = $"Label"
 
 func _on_area_2_dyes_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -18,3 +19,7 @@ func _on_area_2_dno_input_event(viewport: Node, event: InputEvent, shape_idx: in
 			print("Area2D was clicked!")
 			get_node("Lore(star)").visible = true
 			
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible

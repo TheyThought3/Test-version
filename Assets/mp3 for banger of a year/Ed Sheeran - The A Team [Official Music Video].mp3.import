@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br5w2ntcreb8f"
+path="res://.godot/imported/Ed Sheeran - The A Team [Official Music Video].mp3-f64608b67b4473a59454d9067cbda043.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/Ed Sheeran - The A Team [Official Music Video].mp3"
+dest_files=["res://.godot/imported/Ed Sheeran - The A Team [Official Music Video].mp3-f64608b67b4473a59454d9067cbda043.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

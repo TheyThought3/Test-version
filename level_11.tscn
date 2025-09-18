@@ -11,8 +11,12 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		# Check if the left mouse button was pressed
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print(\"Area2D was clicked!\")
-			get_tree().change_scene_to_file(\"res://level_12.tscn\")
+			get_tree().change_scene_to_file(\"res://level_29.tscn\")
 			
+@onready var toggle_label : Label = $\"Label2\"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"toggle\"):
+		toggle_label.visible = !toggle_label.visible
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ve6sx"]
@@ -40,5 +44,14 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Click on the most dangerous part
 of the pakenham river part"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -369.0
+offset_top = -209.0
+offset_right = 33.0
+offset_bottom = -160.0
+text = "#trooper I really dud think you were done  after this
+looking back that was stupid"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

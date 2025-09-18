@@ -12,7 +12,11 @@ func _on_retry_button_pressed() -> void:
 
 
 func _on_move_on_button_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://level_14.tscn\")
+	get_tree().change_scene_to_file(\"res://level_24.tscn\")
+@onready var toggle_label : Label = $\"Label2\"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"toggle\"):
+		toggle_label.visible = !toggle_label.visible
 "
 
 [node name="level_13b" type="Node2D"]
@@ -49,6 +53,15 @@ offset_right = -123.0
 offset_bottom = -246.0
 scale = Vector2(3.52229, 4.31225)
 text = "ha ah not that easy eh"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -390.0
+offset_top = 89.0
+offset_right = 321.0
+offset_bottom = 112.0
+text = "I felt so so cool in front of the fam, to introduce you, and be like yo this is Ava she's awesome.
+Paige was jealous of me FS"
 
 [connection signal="pressed" from="Retry button" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Move On Button" to="." method="_on_move_on_button_pressed"]

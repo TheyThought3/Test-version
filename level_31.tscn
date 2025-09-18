@@ -46,5 +46,15 @@ offset_bottom = 535.0
 scale = Vector2(1.80207, 3.40038)
 text = "Whoops other left"
 
+[node name="Label3" type="Label" parent="."]
+visible = false
+offset_left = 608.0
+offset_top = 520.0
+offset_right = 1126.0
+offset_bottom = 595.0
+text = "Idk, I was very very happy to be invited, I almost always like being
+ around your friends (some more then others) and like idk I felt like
+ a special little boy on your special little day"
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="Area2D2" to="." method="_on_area_2d_2_input_event"]

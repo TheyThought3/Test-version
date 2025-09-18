@@ -8,17 +8,17 @@ var current_ball_speed: float = 0.0
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@onready var toggle_label : Label = $"Label2"
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 
 func _on_hole_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if current_ball_speed <350:
 		visible = false
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://level_25.tscn")
+		get_tree().change_scene_to_file("res://level_34a.tscn")
 
 
 #add a blue filler background

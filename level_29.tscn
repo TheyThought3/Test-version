@@ -119,4 +119,12 @@ offset_bottom = 575.0
 scale = Vector2(1.16299, 2.12509)
 text = "Make it home from the walk before the pee timer fills up!"
 
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 288.0
+offset_top = 392.0
+offset_right = 799.0
+offset_bottom = 415.0
+text = "The scene reload would prob stop me from writing something real"
+
 [connection signal="body_entered" from="finish line" to="." method="_on_finish_line_body_entered"]

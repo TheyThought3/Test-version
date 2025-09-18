@@ -17,8 +17,8 @@
 script = ExtResource("1_o05fe")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(-28, -16)
-scale = Vector2(1.88745, 1.99308)
+position = Vector2(-0.499973, 1.50005)
+scale = Vector2(2.07576, 1.87197)
 texture = ExtResource("1_hy6b0")
 
 [node name="talking" type="Label" parent="."]
@@ -29,30 +29,31 @@ offset_bottom = -197.0
 scale = Vector2(1.60636, 1.54064)
 
 [node name="FamDinnerThings" parent="." instance=ExtResource("2_rcwqt")]
-position = Vector2(-115, 9)
+position = Vector2(-96, 26)
 scale = Vector2(0.140491, 0.156481)
 reveal_texture = ExtResource("3_qlv60")
 starting_texture = ExtResource("4_qetk6")
 
 [node name="FamDinnerThings2" parent="." instance=ExtResource("2_rcwqt")]
-position = Vector2(14, -9.53674e-07)
+position = Vector2(47, 20)
 scale = Vector2(0.140491, 0.156481)
 reveal_texture = ExtResource("5_nyjhf")
 starting_texture = ExtResource("6_o05fe")
 
 [node name="FamDinnerThings3" parent="." instance=ExtResource("2_rcwqt")]
-position = Vector2(-69, -81)
+position = Vector2(-44, -61)
 scale = Vector2(0.140491, 0.156481)
 reveal_texture = ExtResource("7_j1ja7")
 starting_texture = ExtResource("8_fr3ar")
 
 [node name="FamDinnerThings4" parent="." instance=ExtResource("2_rcwqt")]
-position = Vector2(43, -82)
+position = Vector2(77, -65)
 scale = Vector2(0.205245, 0.201174)
 reveal_texture = ExtResource("9_xte7c")
 starting_texture = ExtResource("10_sel4f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
 
 [node name="grace timer" type="Label" parent="."]
 offset_left = -355.0
@@ -68,6 +69,22 @@ visible = false
 position = Vector2(301, -190)
 scale = Vector2(0.221821, 0.19131)
 texture = ExtResource("12_j1ja7")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 229.0
+offset_top = 96.0
+offset_right = 454.0
+offset_bottom = 223.0
+text = "I felt very cool and important
+to be at your \"family dinner\"
+so to say... with the scary 
+hunts (sarcasm)
+Very cool and important"
 
 [connection signal="early" from="FamDinnerThings" to="." method="_on_fam_dinner_things_early"]
 [connection signal="eaten" from="FamDinnerThings" to="." method="_on_fam_dinner_things_eaten"]

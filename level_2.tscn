@@ -113,6 +113,21 @@ rotation = -1.56907
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom border"]
 shape = SubResource("WorldBoundaryShape2D_7j8ne")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -115.232
+offset_top = -64.1165
+offset_right = 250.768
+offset_bottom = 62.8835
+scale = Vector2(0.304518, 0.218587)
+text = "This truly was the first moment that I 
+realized you were a real person. After 
+Jacob hit his head and we were 
+dying... not everyone would 
+have found that as funny. 
+It was an oo moment
+First of many rolling laughters"
+
 [connection signal="body_entered" from="level2pp" to="." method="_on_level_2_pp_body_entered"]
 [connection signal="body_entered" from="level2pp" to="jacob" method="_on_level_2_pp_body_entered"]
 [connection signal="body_exited" from="level2pp" to="." method="_on_level_2_pp_body_exited"]

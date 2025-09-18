@@ -6,6 +6,8 @@
 
 [sub_resource type="GDScript" id="GDScript_ys455"]
 script/source = "extends Node2D
+
+@onready var toggle_label : Label = $\"Label2\"
 var total_score = 0
 @export var player_speed: float = 3.0
 
@@ -46,6 +48,8 @@ func _process(delta: float) -> void:
 		if timer_running:
 			game_time += delta
 			timer_label.text = str(\"%.2f\" % game_time)  # hundredths of seconds
+	if Input.is_action_just_pressed(\"toggle\"):
+		toggle_label.visible = !toggle_label.visible
 
 
 func _start_game() -> void:
@@ -62,7 +66,7 @@ func _on_exit_entered(body: Node) -> void:
 		timer_running = false
 		print(\"⏱️ Final time:\", game_time)
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file(\"res://level_16.tscn\")
+		get_tree().change_scene_to_file(\"res://level_32.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys455"]
@@ -134,3 +138,18 @@ offset_right = -71.0
 offset_bottom = 111.0
 scale = Vector2(1.77181, 4.68584)
 text = "Leave the school dance as fast as possible"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 700.0
+offset_top = 18.0
+offset_right = 1049.0
+offset_bottom = 171.0
+scale = Vector2(1.20808, 1.10809)
+text = "So erm... I don't like dances, I don't 
+know about you. But you left with me 
+which made my night. It was the 
+silliest thing ever watching some of 
+the people show up in normal clothes 
+then you in your PJ pants. Makes me chuckle."

@@ -1,6 +1,6 @@
 extends Node2D
 @export var player_speed: float = 30.0
-
+@onready var toggle_label : Label = $"Label2"
 func get_player_speed() -> float:
 	return player_speed
 
@@ -10,6 +10,8 @@ var erased_tiles: Array = []
 func _process(_delta):
 	var disappearing_layer = $"eExtra layer"
 	var correct_layer = $"the correct path"
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 	var local_pos_dis = disappearing_layer.to_local($Player.global_position)
 	var tile_pos_dis = disappearing_layer.local_to_map(local_pos_dis)
@@ -32,4 +34,4 @@ func _process(_delta):
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://level_7.tscn")
+	get_tree().change_scene_to_file("res://level_10.tscn")

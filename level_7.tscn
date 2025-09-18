@@ -42,4 +42,20 @@ offset_right = 198.0
 offset_bottom = 40.0
 text = "Exit the brain"
 
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color(1, 0.396078, 0.172549, 1)
+offset_left = -51.0
+offset_top = 51.0
+offset_right = 285.0
+offset_bottom = 230.0
+scale = Vector2(0.465387, 0.454876)
+text = "I remeber walking to swimming one winter,
+ (showboating over A.L.) but felt constantly
+ conflicted over this other girl who I 
+thought was just my friend...
+afraid to comit because of this freind, 
+but afraid of loosing the friend
+(It's You shh)"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

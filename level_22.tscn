@@ -183,6 +183,19 @@ offset_right = -140.0
 offset_bottom = 319.0
 text = "Move on Button"
 
+[node name="Label3" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 1, 1)
+offset_left = -568.0
+offset_top = -40.0
+offset_right = -139.0
+offset_bottom = 87.0
+text = "I had it writen down in my notes as \"our one true date\" 
+I later thought of another, but then forgot... so welp
+I had an ehmazing time on those ski trips as well and 
+like most things this year, the goodness was enhanced
+by toi"
+
 [connection signal="pressed" from="Jump1But" to="." method="_on_jump_1_but_pressed"]
 [connection signal="pressed" from="Jump2But" to="." method="_on_jump_2_but_pressed"]
 [connection signal="pressed" from="Jump3But" to="." method="_on_jump_3_but_pressed"]

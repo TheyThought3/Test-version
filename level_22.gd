@@ -63,4 +63,10 @@ func _on_switch_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_23.tscn")
+	get_tree().change_scene_to_file("res://level_30.tscn")
+	
+
+@onready var toggle_label : Label = $"Label3"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible

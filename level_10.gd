@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var toggle_label : Label = $"Label"
 @export var player_speed: float = 300.0
 
 func get_player_speed() -> float:
@@ -13,7 +13,9 @@ func _process(_delta: float) -> void:
 		last_y = last_one.global_position.y
 		print("📍 LastOne Y =", last_y)
 		if last_y > 320:
-			get_tree().change_scene_to_file("res://level_11.tscn")
+			get_tree().change_scene_to_file("res://level_14.tscn")
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
 
 var total_score := 0
 

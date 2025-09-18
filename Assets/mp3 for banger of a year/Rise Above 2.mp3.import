@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drj5utmwt108e"
+path="res://.godot/imported/Rise Above 2.mp3-2066ab1121afd24187413166779b6320.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/Rise Above 2.mp3"
+dest_files=["res://.godot/imported/Rise Above 2.mp3-2066ab1121afd24187413166779b6320.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -705,6 +705,14 @@ position = Vector2(441, -48.8829)
 position = Vector2(-441, -158.417)
 shape = SubResource("WorldBoundaryShape2D_rf2cd")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 12
+offset_left = -206.0
+offset_top = -73.0
+offset_right = 81.0
+offset_bottom = 73.0
+color = Color(1, 0.0392157, 1, 1)
+
 [node name="right border" type="StaticBody2D" parent="."]
 position = Vector2(441, -47.9777)
 
@@ -719,5 +727,34 @@ offset_right = -7.0
 offset_bottom = -2.34671
 scale = Vector2(0.70153, 0.840941)
 text = "Try to find some help"
+
+[node name="Label2" type="Label" parent="."]
+z_index = 13
+offset_left = -187.0
+offset_top = -56.1249
+offset_right = 115.0
+offset_bottom = 70.8751
+scale = Vector2(0.602228, 0.533917)
+text = "click the button between minimize 
+and x to make your window the size of 
+this rectangle. When you can only 
+see pink but barely, click F 
+when you are ready
+
+The music is basically just what I listened to while
+making this, feel free to mute of course theres no 
+sound effects or anything (I figured out audio too late)"
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = 101.387
+offset_right = 307.0
+offset_bottom = 202.387
+scale = Vector2(0.373995, 0.339523)
+text = "This was the first one... I had no clue 
+what I wanted this to be like. I put this 
+together just to start and so that I 
+could know wassup"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0uqn7g01b83x"
+path="res://.godot/imported/Burn from HAMILTON.mp3-ca317dcd536ef3a4c1a21e70596cb395.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/Burn from HAMILTON.mp3"
+dest_files=["res://.godot/imported/Burn from HAMILTON.mp3-ca317dcd536ef3a4c1a21e70596cb395.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

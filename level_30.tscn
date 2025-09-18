@@ -73,6 +73,21 @@ position = Vector2(184, 416)
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_8o38x")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 584.0
+offset_top = 104.0
+offset_right = 624.0
+offset_bottom = 127.0
+text = "This was the funniest thing ever retrospectively...
+I came over at what felt like super early (it was 
+8:30) during March Break though, and we just 
+slept... I think three naps were had in the span of
+like 4 hours. But like I said awhile ago, maybe 
+(I edit these and somethings don't make it through)
+there is nothing in life I would rather do then wake
+up to you, nothing. My two favroute things in one"
+
 [connection signal="body_entered" from="box1" to="." method="_on_box_1_body_entered"]
 [connection signal="body_entered" from="box2" to="." method="_on_box_2_body_entered"]
 [connection signal="body_entered" from="box3" to="." method="_on_box_3_body_entered"]

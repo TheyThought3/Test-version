@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var toggle_label : Label = $"Label2"
 var eaten_count = 0
 @onready var label: Label = $"grace timer"
 @onready var talk: Label = $"talking"
@@ -15,12 +15,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if eaten_count > 3:
 		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file("res://level_27.tscn")
+		get_tree().change_scene_to_file("res://level_12.tscn")
 	label.text = str(round(timer.time_left))
 	if timer.time_left < 0.5:
 		label.visible = false
 		grace.visible = true
-	
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
+
 	
 	
 func _on_fam_dinner_things_eaten() -> void:

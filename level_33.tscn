@@ -115,4 +115,14 @@ offset_bottom = 151.0
 scale = Vector2(2.79844, 4.93255)
 text = "hit F to swim"
 
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 80.0
+offset_top = 24.0
+offset_right = 1134.0
+offset_bottom = 99.0
+text = "Meeting your dad was a fun adventure. It had been teased a few times. I do not know what I was expecting, but it went better then I did. 
+I was  so so so excited to meet the guy I had heard so much about, the guy that is half of you.
+This is a recreation of the swim race that he inadvertantly challenged me to, \"I could beat both of you across the river.\" so he says..."
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

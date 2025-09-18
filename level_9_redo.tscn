@@ -67,3 +67,25 @@ offset_right = -300.0
 offset_bottom = 286.0
 scale = Vector2(1.2716, 2.13516)
 text = "Left click you'll know what to do"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -162.0
+offset_top = -312.0
+offset_right = 339.0
+offset_bottom = -263.0
+text = "I think you know exactly why this is on here, if not then ask ig idk
+
+
+
+
+
+
+
+
+
+fun side story about this one then... I made it before the presents , and I got the image off 
+google, but to get the broken I went into slides and had 2 of the eggs, covered the same parts
+with a white rectangele then used adobe background remover, it was a silly adventure
+
+"

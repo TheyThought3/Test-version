@@ -518,13 +518,6 @@ collision_layer = 7
 position = Vector2(0, -1)
 zoom = Vector2(4, 4)
 
-[node name="Label" type="Label" parent="."]
-offset_left = -334.0
-offset_top = -205.0
-offset_right = 130.0
-offset_bottom = -182.0
-text = "this is out of order but its when faizan said something to me"
-
 [node name="moving water" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -65)
 sprite_frames = SubResource("SpriteFrames_gvcbt")
@@ -923,5 +916,24 @@ rotation = 0.0138875
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom middle2"]
 rotation = 0.0130999
 shape = SubResource("SegmentShape2D_ugxsx")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+z_index = 13
+offset_left = -229.0
+offset_top = -105.0
+offset_right = 1978.0
+offset_bottom = 152.0
+scale = Vector2(0.491379, 0.468314)
+text = "I went to the movies with Faizan it came up,
+ (I remeber hwo its just a long story) and he
+ said \"She's talking to some guy from her
+ lifeguarding\" And at that moment I realized
+ I apparently didn't just think of you as a 
+freind. Now enter the dark ages... I tried to
+ make it look spooky... I failed. 
+(this was the one I was working on when 
+you had 2hours of sleep and I was unhappy
+(seemed symbolic))"
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

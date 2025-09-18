@@ -131,4 +131,18 @@ offset_bottom = -9.00001
 scale = Vector2(0.534265, 0.665238)
 text = "Its Just me phone number"
 
+[node name="Label3" type="Label" parent="."]
+visible = false
+modulate = Color(0.000693898, 0.000693898, 0.000693898, 1)
+offset_left = -119.0
+offset_top = -61.0
+offset_right = 376.0
+offset_bottom = 66.0
+scale = Vector2(0.561505, 0.475253)
+text = "After that seating chart, 
+our talking moved from 
+\"profesional\" (so to say) to 
+personal, and a real joking
+ friendship"
+
 [connection signal="pressed" from="Button1" to="." method="_on__pressed"]

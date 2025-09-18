@@ -23,7 +23,12 @@ func _on_cookie_collected():
 		move_on.visible = true
 		instLabel.visible = true
 
+@onready var toggle_label : Label = $"Label2"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
+
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		get_tree().change_scene_to_file("res://level_22.tscn")
+		get_tree().change_scene_to_file("res://level_23.tscn")

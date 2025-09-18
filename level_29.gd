@@ -4,6 +4,13 @@ extends Node2D
 @onready var cup: ColorRect = $Cup
 @export var player_speed: float = 300.0
 
+@onready var toggle_label : Label = $"Label2"
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle"):
+		toggle_label.visible = !toggle_label.visible
+
+
+
 func get_player_speed() -> float:
 	return player_speed
 
@@ -76,4 +83,4 @@ func start_game_over_timer() -> void:
 
 func _on_finish_line_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.8).timeout
-	get_tree().change_scene_to_file("res://level_30.tscn")
+	get_tree().change_scene_to_file("res://level_21.tscn")

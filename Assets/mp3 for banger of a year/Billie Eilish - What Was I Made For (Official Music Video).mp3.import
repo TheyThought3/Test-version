@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8xg6kariy8pm"
+path="res://.godot/imported/Billie Eilish - What Was I Made For (Official Music Video).mp3-66ae137857401b8cbd179df78fb225af.mp3str"
+
+[deps]
+
+source_file="res://Assets/mp3 for banger of a year/Billie Eilish - What Was I Made For (Official Music Video).mp3"
+dest_files=["res://.godot/imported/Billie Eilish - What Was I Made For (Official Music Video).mp3-66ae137857401b8cbd179df78fb225af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

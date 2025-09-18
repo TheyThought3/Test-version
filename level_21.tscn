@@ -108,4 +108,13 @@ visible = false
 position = Vector2(785, -18)
 shape = SubResource("RectangleShape2D_yrars")
 
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -1108.0
+offset_top = 480.0
+offset_right = -768.0
+offset_bottom = 503.0
+scale = Vector2(1.93234, 3.92152)
+text = "I don't super know why, but it was c'est tout"
+
 [connection signal="input_event" from="moveoner" to="." method="_on_area_2d_input_event"]

@@ -5,13 +5,13 @@
 [sub_resource type="GDScript" id="GDScript_djv3c"]
 script/source = "extends Node2D
 
-
+@onready var toggle_label : Label = $\"Label2\"
 func _on_area_2d_no_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		# Check if the left mouse button was pressed
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print(\"Area2D was clicked!\")
-			get_tree().change_scene_to_file(\"res://level_13.tscn\")
+			get_tree().change_scene_to_file(\"res://level_18.tscn\")
 			
 
 
@@ -21,6 +21,10 @@ func _on_area_2d_yes_input_event(viewport: Node, event: InputEvent, shape_idx: i
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print(\"Area2D was clicked!\")
 			get_node(\"whiteyesblocker\").visible = true
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"toggle\"):
+		toggle_label.visible = !toggle_label.visible
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djv3c"]
@@ -66,6 +70,17 @@ z_index = 2
 position = Vector2(-2350, 1849)
 scale = Vector2(4.7097, 3.69415)
 texture = ExtResource("1_djv3c")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color(0.0177324, 0.0177324, 0.0177324, 1)
+offset_left = 810.0
+offset_top = 179.0
+offset_right = 1126.0
+offset_bottom = 254.0
+text = "Same as last
+I felt very cool, important and locked in...
+Thanks Kimothy"
 
 [connection signal="input_event" from="Area2DNo" to="." method="_on_area_2d_no_input_event"]
 [connection signal="input_event" from="Area2DYes" to="." method="_on_area_2d_yes_input_event"]
